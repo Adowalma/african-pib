@@ -1,3 +1,83 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import 'tailwindcss';
+@config "./tailwind.config.js";
+
+body {
+  background-color: #f8f9fa;
+  color: #191c1d;
+  -webkit-font-smoothing: antialiased;
+}
+
+.dark body {
+  background-color: #191c1d;
+  color: #f0f1f2;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #bec8c9;
+  border-radius: 10px;
+}
+
+.kpi-card {
+  box-shadow: 0 4px 20px rgba(0, 69, 73, 0.05);
+  transition: all 0.2s ease;
+}
+
+.kpi-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 69, 73, 0.08);
+}
+
+.glass-header {
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.dark .glass-header {
+  background: rgba(25, 28, 29, 0.85);
+  border-color: rgba(111, 121, 121, 0.2);
+}
+
+.premium-gradient {
+  background: linear-gradient(135deg, #004549 0%, #0d5e63 100%);
+}
+
+.active-chip {
+  background: #004549;
+  color: #ffffff;
+}
+
+.mini-map-svg {
+  width: 100%;
+  height: 100%;
+  fill: #edeeef;
+  stroke: #bec8c9;
+  stroke-width: 0.5;
+}
+
+.dark .mini-map-svg {
+  fill: #2e3132;
+  stroke: #3f4849;
+}
+
+.sidebar-link.active {
+  background: #004549;
+  color: #ffffff;
+}
+
+.sidebar-link:not(.active) {
+  color: #3f4849;
+}
+
+.dark .sidebar-link:not(.active) {
+  color: #bec8c9;
+}

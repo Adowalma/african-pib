@@ -1,0 +1,307 @@
+<div class="grid grid-cols-12 gap-6 max-w-[1600px] mx-auto">
+  <!-- Dashboard Header (Span 12) -->
+  <div class="col-span-12 flex flex-col md:flex-row md:items-end justify-between gap-4 mb-2">
+    <div>
+      <p class="text-primary dark:text-primary-fixed font-label-md text-label-md tracking-wider uppercase">
+        Regional Insights</p>
+      <h2 class="text-headline-lg font-bold text-on-surface">Continental Performance Overview</h2>
+    </div>
+    <div class="flex gap-2">
+      <div class="flex bg-surface-container p-1 rounded-lg border border-outline-variant">
+        <button
+          class="px-4 py-1.5 bg-surface-container-lowest dark:bg-primary-container/20 dark:text-primary-fixed shadow-sm rounded text-label-md font-bold text-primary">2024
+          (Forecast)</button>
+        <button
+          class="px-4 py-1.5 text-on-surface-variant text-label-md font-medium hover:text-on-surface transition-colors">2023</button>
+        <button
+          class="px-4 py-1.5 text-on-surface-variant text-label-md font-medium hover:text-on-surface transition-colors">Historical</button>
+      </div>
+      <button
+        class="px-3 py-1.5 bg-surface-container rounded-lg border border-outline-variant flex items-center gap-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors">
+        <span class="material-symbols-outlined text-sm">tune</span>
+        <span class="text-label-md font-medium">Filters</span>
+      </button>
+    </div>
+  </div>
+  <!-- KPI Cards (Span 3 each) -->
+  <!-- GDP PPP -->
+  <div
+    class="col-span-12 sm:col-span-6 lg:col-span-3 bg-surface-container-lowest p-card-padding rounded-xl border border-outline-variant shadow-sm hover:border-primary/50 transition-all cursor-pointer">
+    <div class="flex justify-between items-start mb-4">
+      <span class="text-label-md font-medium text-on-surface-variant">GDP PPP (Total)</span>
+      <span
+        class="text-primary dark:text-primary-fixed font-bold text-xs bg-primary-container/20 px-2 py-0.5 rounded">+4.2%</span>
+    </div>
+    <div class="flex flex-col">
+      <span class="text-data-numeric font-bold text-on-surface">$8.62 Trillion</span>
+      <p class="text-xs text-outline mt-1 italic">Int. Dollars (2024 Current)</p>
+    </div>
+    <div class="mt-6 h-12 w-full relative overflow-hidden rounded bg-surface-container-low dark:bg-surface-container">
+      <div class="absolute bottom-0 left-0 w-full h-full sparkline-gradient"></div>
+      <svg class="absolute bottom-0 left-0 w-full h-10" preserveaspectratio="none" viewbox="0 0 100 40">
+        <path class="text-primary dark:text-primary-fixed" d="M0 35 Q 25 38, 50 20 T 100 5" fill="none"
+          stroke="currentColor" stroke-width="2"></path>
+      </svg>
+    </div>
+  </div>
+  <!-- Growth Rate -->
+  <div
+    class="col-span-12 sm:col-span-6 lg:col-span-3 bg-surface-container-lowest p-card-padding rounded-xl border border-outline-variant shadow-sm hover:border-primary/50 transition-all cursor-pointer">
+    <div class="flex justify-between items-start mb-4">
+      <span class="text-label-md font-medium text-on-surface-variant">Avg. Growth Rate</span>
+      <span class="material-symbols-outlined text-secondary dark:text-secondary-fixed-dim">trending_up</span>
+    </div>
+    <div class="flex flex-col">
+      <span class="text-data-numeric font-bold text-on-surface">3.8%</span>
+      <p class="text-xs text-outline mt-1">Continental Median</p>
+    </div>
+    <div class="mt-6 flex gap-1.5 items-end h-12">
+      <div class="flex-1 bg-surface-container h-4 rounded-t-sm"></div>
+      <div class="flex-1 bg-surface-container h-6 rounded-t-sm"></div>
+      <div class="flex-1 bg-secondary-container h-10 rounded-t-sm"></div>
+      <div class="flex-1 bg-primary dark:bg-primary-fixed h-12 rounded-t-sm"></div>
+      <div class="flex-1 bg-surface-container h-8 rounded-t-sm"></div>
+    </div>
+  </div>
+  <!-- Inflation -->
+  <div
+    class="col-span-12 sm:col-span-6 lg:col-span-3 bg-surface-container-lowest p-card-padding rounded-xl border border-outline-variant shadow-sm hover:border-primary/50 transition-all cursor-pointer">
+    <div class="flex justify-between items-start mb-4">
+      <span class="text-label-md font-medium text-on-surface-variant">Avg. Inflation</span>
+      <span
+        class="text-error dark:text-secondary-fixed font-bold text-xs bg-error-container dark:bg-secondary-fixed/20 px-2 py-0.5 rounded">-1.2%</span>
+    </div>
+    <div class="flex flex-col">
+      <span class="text-data-numeric font-bold text-on-surface">15.2%</span>
+      <p class="text-xs text-outline mt-1">Weight-adjusted average</p>
+    </div>
+    <div class="mt-6">
+      <div class="flex items-center justify-between text-[10px] font-bold text-outline mb-1 px-1">
+        <span>JAN</span>
+        <span>JUN</span>
+        <span>DEC</span>
+      </div>
+      <div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+        <div class="bg-error dark:bg-secondary w-3/4 h-full rounded-full transition-all duration-1000"></div>
+      </div>
+    </div>
+  </div>
+  <!-- Regional Leader -->
+  <div
+    class="col-span-12 sm:col-span-6 lg:col-span-3 bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container p-card-padding rounded-xl shadow-md relative overflow-hidden transition-transform hover:scale-[1.01] cursor-pointer">
+    <div class="relative z-10">
+      <span class="text-label-md font-medium opacity-80">Highest Regional Growth</span>
+      <h3 class="text-headline-sm font-bold mt-2">Ethiopia</h3>
+      <div class="flex items-center gap-2 mt-4">
+        <span class="text-3xl font-bold">6.1%</span>
+        <span class="material-symbols-outlined">rocket_launch</span>
+      </div>
+    </div>
+    <div class="absolute -right-6 -bottom-6 opacity-10">
+      <span class="material-symbols-outlined text-[140px]" style="font-variation-settings: 'FILL' 1;">public</span>
+    </div>
+  </div>
+  <!-- Economics Simplified (Span 12) -->
+  <div class="col-span-12 mt-4">
+    <h3 class="text-headline-sm font-bold text-on-surface mb-6 flex items-center gap-2">
+      <span class="material-symbols-outlined text-primary dark:text-primary-fixed">lightbulb</span>
+      Economics Simplified
+    </h3>
+    <div class="grid grid-cols-12 gap-6">
+      <!-- GDP vs PPP (Span 6) -->
+      <div
+        class="col-span-12 lg:col-span-6 bg-surface-container-lowest rounded-2xl p-8 border border-outline-variant flex flex-col justify-between relative group overflow-hidden shadow-sm">
+        <div
+          class="absolute top-0 right-0 p-8 text-surface-container-high dark:text-surface-container transition-transform group-hover:scale-110 opacity-50">
+          <span class="material-symbols-outlined text-[100px]"
+            style="font-variation-settings: 'FILL' 1;">payments</span>
+        </div>
+        <div class="relative z-10">
+          <div class="w-12 h-12 bg-secondary-container rounded-xl flex items-center justify-center mb-6">
+            <span class="material-symbols-outlined text-on-secondary-container">show_chart</span>
+          </div>
+          <h4 class="text-headline-md font-bold text-on-surface mb-3">GDP vs. PPP</h4>
+          <p class="text-body-md text-on-surface-variant max-w-md leading-relaxed">
+            Imagine GDP as the amount of cash in your pocket, while PPP (Purchasing Power Parity) is how many
+            loaves of bread that cash actually buys in your local market.
+          </p>
+        </div>
+        <button
+          class="mt-8 w-fit flex items-center gap-2 text-primary dark:text-primary-fixed font-bold hover:gap-4 transition-all group/btn relative z-10">
+          Learn about purchasing power
+          <span
+            class="material-symbols-outlined group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+        </button>
+      </div>
+      <!-- Mini Bento (Span 6) -->
+      <div class="col-span-12 lg:col-span-6 grid grid-cols-2 gap-6">
+        <div
+          class="bg-tertiary dark:bg-tertiary-container text-on-tertiary dark:text-on-tertiary-container rounded-2xl p-6 flex flex-col justify-between shadow-sm">
+          <div>
+            <h4 class="text-headline-sm font-bold">Trade Balance</h4>
+            <p class="text-sm opacity-80 mt-2">When exports exceed imports, the balance tilts in favor of national
+              surplus.</p>
+          </div>
+          <div class="mt-4 flex justify-end">
+            <span class="material-symbols-outlined text-4xl opacity-50">balance</span>
+          </div>
+        </div>
+        <div
+          class="bg-surface-container-highest dark:bg-surface-container rounded-2xl p-6 flex flex-col justify-between border border-outline-variant hover:bg-surface-container-high dark:hover:bg-outline-variant/10 transition-colors shadow-sm">
+          <div>
+            <h4 class="text-headline-sm font-bold text-primary dark:text-primary-fixed">Debt Ratio</h4>
+            <p class="text-sm text-on-surface-variant mt-2">Sustainable credit relative to output. Healthy ratios
+              drive future investment capability.</p>
+          </div>
+          <div class="mt-4 flex justify-end">
+            <span class="material-symbols-outlined text-4xl text-outline opacity-40">credit_card</span>
+          </div>
+        </div>
+        <div
+          class="col-span-2 bg-secondary-container rounded-2xl p-6 flex items-center gap-6 border border-secondary shadow-sm">
+          <div class="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-4xl text-on-secondary-container">account_balance_wallet</span>
+          </div>
+          <div>
+            <h4 class="text-headline-sm font-bold text-on-secondary-container">Fiscal Policy</h4>
+            <p class="text-body-md text-on-secondary-container opacity-90">Framework for government revenue
+              collection and expenditure to steer growth.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Technical Dictionary (Span 12) -->
+  <div class="col-span-12 mt-4">
+    <div class="flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
+      <h3 class="text-headline-sm font-bold text-on-surface flex items-center gap-2 self-start">
+        <span class="material-symbols-outlined text-primary dark:text-primary-fixed">menu_book</span>
+        Technical Dictionary
+      </h3>
+      <div class="w-full md:w-96 relative">
+        <span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline">search</span>
+        <input
+          class="w-full pl-10 pr-4 py-2 bg-surface-container rounded-lg border border-outline-variant focus:border-primary dark:focus:border-primary-fixed focus:ring-1 focus:ring-primary dark:focus:ring-primary-fixed text-sm transition-all dark:text-on-surface dark:placeholder-on-surface-variant/50"
+          placeholder="Filter indicators by name or code..." type="text" />
+      </div>
+    </div>
+    <div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse min-w-[800px]">
+          <thead>
+            <tr
+              class="bg-surface-container-low dark:bg-surface-container text-on-surface-variant border-b border-outline-variant">
+              <th class="px-6 py-4 font-bold text-label-md uppercase tracking-wider">Code</th>
+              <th class="px-6 py-4 font-bold text-label-md uppercase tracking-wider">Indicator Name</th>
+              <th class="px-6 py-4 font-bold text-label-md uppercase tracking-wider">Unit</th>
+              <th class="px-6 py-4 font-bold text-label-md uppercase tracking-wider">Source</th>
+              <th class="px-6 py-4 font-bold text-label-md uppercase tracking-wider text-right">Action</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-outline-variant/30">
+            <tr
+              class="zebra-row hover:bg-surface-container/50 dark:hover:bg-white/5 transition-colors cursor-pointer group">
+              <td class="px-6 py-4 font-label-md text-primary dark:text-primary-fixed font-bold">GDP_NOM</td>
+              <td class="px-6 py-4">
+                <div class="flex flex-col">
+                  <span class="font-bold text-on-surface">GDP Nominal</span>
+                  <span class="text-xs text-outline">Market prices converted to USD</span>
+                </div>
+              </td>
+              <td class="px-6 py-4 text-sm text-on-surface-variant">USD ($)</td>
+              <td class="px-6 py-4">
+                <span
+                  class="text-[10px] font-bold bg-surface-container dark:bg-outline-variant/20 px-2 py-1 rounded border border-outline-variant dark:text-on-surface">World
+                  Bank</span>
+              </td>
+              <td class="px-6 py-4 text-right">
+                <button
+                  class="p-2 rounded-full hover:bg-primary/10 dark:hover:bg-primary-fixed/10 text-primary dark:text-primary-fixed transition-colors">
+                  <span class="material-symbols-outlined text-xl">info</span>
+                </button>
+              </td>
+            </tr>
+            <tr
+              class="zebra-row hover:bg-surface-container/50 dark:hover:bg-white/5 transition-colors cursor-pointer group">
+              <td class="px-6 py-4 font-label-md text-primary dark:text-primary-fixed font-bold">GDP_CAP</td>
+              <td class="px-6 py-4">
+                <div class="flex flex-col">
+                  <span class="font-bold text-on-surface">GDP Per Capita</span>
+                  <span class="text-xs text-outline">Total GDP divided by population</span>
+                </div>
+              </td>
+              <td class="px-6 py-4 text-sm text-on-surface-variant">USD / Person</td>
+              <td class="px-6 py-4">
+                <span
+                  class="text-[10px] font-bold bg-surface-container dark:bg-outline-variant/20 px-2 py-1 rounded border border-outline-variant dark:text-on-surface">IMF</span>
+              </td>
+              <td class="px-6 py-4 text-right">
+                <button
+                  class="p-2 rounded-full hover:bg-primary/10 dark:hover:bg-primary-fixed/10 text-primary dark:text-primary-fixed transition-colors">
+                  <span class="material-symbols-outlined text-xl">info</span>
+                </button>
+              </td>
+            </tr>
+            <tr
+              class="zebra-row hover:bg-surface-container/50 dark:hover:bg-white/5 transition-colors cursor-pointer group">
+              <td class="px-6 py-4 font-label-md text-primary dark:text-primary-fixed font-bold">DEBT_G_RATIO</td>
+              <td class="px-6 py-4">
+                <div class="flex flex-col">
+                  <span class="font-bold text-on-surface">General Gov. Debt</span>
+                  <span class="text-xs text-outline">Gross debt as percentage of GDP</span>
+                </div>
+              </td>
+              <td class="px-6 py-4 text-sm text-on-surface-variant">Percentage (%)</td>
+              <td class="px-6 py-4">
+                <span
+                  class="text-[10px] font-bold bg-surface-container dark:bg-outline-variant/20 px-2 py-1 rounded border border-outline-variant dark:text-on-surface">AfDB</span>
+              </td>
+              <td class="px-6 py-4 text-right">
+                <button
+                  class="p-2 rounded-full hover:bg-primary/10 dark:hover:bg-primary-fixed/10 text-primary dark:text-primary-fixed transition-colors">
+                  <span class="material-symbols-outlined text-xl">info</span>
+                </button>
+              </td>
+            </tr>
+            <tr
+              class="zebra-row hover:bg-surface-container/50 dark:hover:bg-white/5 transition-colors cursor-pointer group">
+              <td class="px-6 py-4 font-label-md text-primary dark:text-primary-fixed font-bold">FDI_INFLOW</td>
+              <td class="px-6 py-4">
+                <div class="flex flex-col">
+                  <span class="font-bold text-on-surface">Foreign Direct Investment</span>
+                  <span class="text-xs text-outline">Net inflows of foreign capital</span>
+                </div>
+              </td>
+              <td class="px-6 py-4 text-sm text-on-surface-variant">USD ($)</td>
+              <td class="px-6 py-4">
+                <span
+                  class="text-[10px] font-bold bg-surface-container dark:bg-outline-variant/20 px-2 py-1 rounded border border-outline-variant dark:text-on-surface">UNCTAD</span>
+              </td>
+              <td class="px-6 py-4 text-right">
+                <button
+                  class="p-2 rounded-full hover:bg-primary/10 dark:hover:bg-primary-fixed/10 text-primary dark:text-primary-fixed transition-colors">
+                  <span class="material-symbols-outlined text-xl">info</span>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div
+        class="bg-surface-container-low dark:bg-surface-container-lowest px-6 py-4 flex justify-between items-center border-t border-outline-variant">
+        <p class="text-sm font-medium text-on-surface-variant">Showing 1-4 of 128 indicators</p>
+        <div class="flex gap-2">
+          <button
+            class="px-3 py-1.5 border border-outline-variant rounded-lg hover:bg-surface-container dark:hover:bg-outline-variant/10 transition-colors disabled:opacity-40"
+            disabled="">
+            <span class="material-symbols-outlined text-sm">chevron_left</span>
+          </button>
+          <button
+            class="px-3 py-1.5 border border-outline-variant rounded-lg hover:bg-surface-container dark:hover:bg-outline-variant/10 transition-colors">
+            <span class="material-symbols-outlined text-sm">chevron_right</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
