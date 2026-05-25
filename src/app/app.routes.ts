@@ -5,7 +5,7 @@ import { Timeline } from './pages/timeline/timeline';
 import { Dictionary } from './pages/dictionary/dictionary';
 
 export const routes: Routes = [
-  { path: '', component: Countries },
+  { path: 'paises', component: Countries },
   { path: 'regional', component: Regional },
   { path: 'temporal', component: Timeline },
   { path: 'dicionario', component: Dictionary },
