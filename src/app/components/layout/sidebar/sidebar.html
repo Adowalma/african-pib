@@ -36,10 +36,10 @@
     <!-- Dark Mode Toggle -->
     <button
       class="w-full flex items-center justify-between p-3 rounded-xl bg-surface-container-low dark:bg-surface-variant/10 hover:bg-surface-container-high dark:hover:bg-surface-variant/20 transition-all group"
-      id="theme-toggle">
+      id="theme-toggle" (click)="toggleTheme()">
       <div class="flex items-center gap-3">
-        <span class="material-symbols-outlined dark:hidden">light_mode</span>
-        <span class="material-symbols-outlined hidden dark:block">dark_mode</span>
+        @if(isDark){ <span class="material-symbols-outlined dark:hidden">dark_mode</span>}
+        @else {<span class="material-symbols-outlined hidden dark:block">light_mode</span>}
         <span class="text-sm font-semibold">Tema</span>
       </div>
       <div class="w-10 h-5 bg-outline-variant/50 rounded-full relative p-0.5">
