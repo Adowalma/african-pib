@@ -70,8 +70,10 @@ body {
 }
 
 .sidebar-link.active {
-  background: #004549;
-  color: #ffffff;
+  background-color: color-mix(in oklab, var(--color-primary, #004549)
+      /* #004549 */
+      10%, transparent);
+  color: #004549;
 }
 
 .sidebar-link:not(.active) {
@@ -80,4 +82,138 @@ body {
 
 .dark .sidebar-link:not(.active) {
   color: #bec8c9;
+}
+
+
+/* ---- regionals --- */
+
+body {
+  background-color: #f8f9fa;
+  color: #191c1d;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.dark body {
+  background-color: #191c1d;
+  color: #f0f1f2;
+}
+
+.modern-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark .modern-card {
+  background: #2e3132;
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+.region-gradient-north {
+  background: linear-gradient(180deg, #004549 0%, #006a70 100%);
+}
+
+.region-gradient-west {
+  background: linear-gradient(180deg, #8d4f00 0%, #b36400 100%);
+}
+
+.region-gradient-east {
+  background: linear-gradient(180deg, #274150 0%, #3e667d 100%);
+}
+
+.region-gradient-south {
+  background: linear-gradient(180deg, #ba1a1a 0%, #e03a3a 100%);
+}
+
+.region-gradient-central {
+  background: linear-gradient(180deg, #6f7979 0%, #8e9a9a 100%);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #3f4849;
+}
+
+.africa-map-path {
+  fill: #e1e3e4;
+  stroke: #ffffff;
+  stroke-width: 1.5;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.dark .africa-map-path {
+  fill: #3f4849;
+  stroke: #2e3132;
+}
+
+.africa-map-path:hover {
+  fill: #d1d5d6;
+}
+
+.dark .africa-map-path:hover {
+  fill: #6f7979;
+}
+
+.africa-map-path.active-north {
+  fill: #004549 !important;
+}
+
+.africa-map-path.active-west {
+  fill: #8d4f00 !important;
+}
+
+.africa-map-path.active-east {
+  fill: #274150 !important;
+}
+
+.africa-map-path.active-south {
+  fill: #ba1a1a !important;
+}
+
+.africa-map-path.active-central {
+  fill: #6f7979 !important;
+}
+
+.region-label {
+  pointer-events: none;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  fill: #3f4849;
+  opacity: 0.8;
+}
+
+.dark .region-label {
+  fill: #e1e3e4;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-data-update {
+  animation: fadeIn 0.3s ease-out forwards;
 }
