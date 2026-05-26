@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-regional',
@@ -6,4 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './regional.html',
   styleUrl: './regional.css',
 })
-export class Regional {}
+export class Regional {
+  regional = signal<string>('Continental');
+}

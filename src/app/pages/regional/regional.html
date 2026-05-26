@@ -29,7 +29,7 @@
           <!-- 12-Column Grid -->
           <div class="grid grid-cols-12 gap-gutter">
             <!-- Map Card (8 Columns) -->
-            <div class="col-span-12 xl:col-span-8 modern-card rounded-xl p-card-padding flex flex-col min-h-[500px]">
+            <div class="col-span-12 xl:col-span-8 modern-card rounded-xl p-card-padding flex flex-col min-h-125">
               <div class="flex justify-between items-center mb-8">
                 <div>
                   <h3 class="text-headline-sm text-on-surface dark:text-white">Geographic Region Selector</h3>
@@ -38,26 +38,30 @@
                 <button
                   class="text-primary dark:text-primary-fixed text-label-md font-black flex items-center gap-1 hover:opacity-70 transition-opacity"
                   id="reset-map">
-                  <span class="material-symbols-outlined text-[18px]">refresh</span>
+                  <span class="material-symbols-outlined text-[18px]"
+                    (click)="regional.set('Continental')">refresh</span>
                   RESET
                 </button>
               </div>
               <div class="flex-1 flex items-center justify-center relative">
-                <div class="w-full max-w-[500px]">
-                  <svg class="w-full h-auto drop-shadow-2xl" viewbox="0 0 400 450" xmlns="http://www.w3.org/2000/svg">
+                <div class="w-full max-w-125">
+                  <svg class="w-full h-auto drop-shadow-2xl" viewBox="0 0 400 450" xmlns="http://www.w3.org/2000/svg">
                     <path class="africa-map-path" d="M100 50 L300 50 L320 120 L280 150 L120 150 L80 120 Z"
-                      id="region-north"></path>
+                      id="region-north" (click)="regional.set('north')" [class.north]="regional() =='north'"></path>
                     <text class="region-label" text-anchor="middle" x="200" y="90">North</text>
-                    <path class="africa-map-path" d="M50 140 L120 150 L120 220 L70 240 L30 200 Z" id="region-west">
+                    <path class="africa-map-path" d="M50 140 L120 150 L120 220 L70 240 L30 200 Z" id="region-west"
+                      (click)="regional.set('west')" [class.west]="regional() =='west'">
                     </path>
                     <text class="region-label" text-anchor="middle" x="75" y="195">West</text>
-                    <path class="africa-map-path" d="M120 150 L250 150 L250 280 L180 300 L120 220 Z"
-                      id="region-central"></path>
+                    <path class="africa-map-path" d="M120 150 L250 150 L250 280 L180 300 L120 220 Z" id="region-central"
+                      (click)="regional.set('central')" [class.central]="regional() =='central'"></path>
                     <text class="region-label" text-anchor="middle" x="185" y="225">Central</text>
-                    <path class="africa-map-path" d="M250 150 L350 120 L380 200 L320 300 L250 280 Z" id="region-east">
+                    <path class="africa-map-path" d="M250 150 L350 120 L380 200 L320 300 L250 280 Z" id="region-east"
+                      (click)="regional.set('east')" [class.east]="regional() =='east'">
                     </path>
                     <text class="region-label" text-anchor="middle" x="310" y="215">East</text>
-                    <path class="africa-map-path" d="M150 300 L280 280 L320 300 L250 420 L150 400 Z" id="region-south">
+                    <path class="africa-map-path" d="M150 300 L280 280 L320 300 L250 420 L150 400 Z" id="region-south"
+                      (click)="regional.set('south')" [class.south]="regional() =='south'">
                     </path>
                     <text class="region-label" text-anchor="middle" x="225" y="350">South</text>
                   </svg>
@@ -77,7 +81,7 @@
                 id="kpi-card-1">
                 <div class="relative z-10">
                   <h4 class="text-label-md text-white/70 dark:text-primary-fixed/70 uppercase tracking-widest mb-3"
-                    id="kpi-label-1">Total Continental GDP</h4>
+                    id="kpi-label-1">Total {{regional()}} GDP</h4>
                   <div class="text-white text-4xl font-extrabold tracking-tight mb-4" id="kpi-value-1">$2.98T</div>
                   <div class="flex items-center gap-2 bg-white/10 w-fit px-3 py-1.5 rounded-lg border border-white/10">
                     <span class="material-symbols-outlined text-[18px] text-primary-fixed">trending_up</span>
