@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { Kpi } from './kpi/kpi';
 
 @Component({
   selector: 'app-dictionary',
-  imports: [],
+  imports: [Kpi],
   templateUrl: './dictionary.html',
   styleUrl: './dictionary.css',
 })
