@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Kpi } from './kpi/kpi';
+import { Dicionario } from '../../services/dictionary.json';
 
 @Component({
   selector: 'app-dictionary',
@@ -7,4 +8,6 @@ import { Kpi } from './kpi/kpi';
   templateUrl: './dictionary.html',
   styleUrl: './dictionary.css',
 })
-export class Dictionary {}
+export class Dictionary {
+  dictionaryData = Dicionario;
+}

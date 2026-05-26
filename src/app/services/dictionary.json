@@ -4,175 +4,175 @@
       "Coluna": "Código_ISO3",
       "Tipo_de_Dado": "Texto",
       "O_que_significa_para_leigos": "Código internacional do país com 3 letras (norma ISO 3166-1 alpha-3)",
-      "Fórmula_ou_Origem": "Fonte: ISO 3166-1"
+      "Formula_ou_Origem": "Fonte: ISO 3166-1"
     },
     {
       "Coluna": "País",
       "Tipo_de_Dado": "Texto",
       "O_que_significa_para_leigos": "Nome do país em português",
-      "Fórmula_ou_Origem": "Fonte: World Bank Open Data"
+      "Formula_ou_Origem": "Fonte: World Bank Open Data"
     },
     {
       "Coluna": "Região",
       "Tipo_de_Dado": "Texto Categórico",
       "O_que_significa_para_leigos": "Agrupamento geográfico do país dentro do continente africano (Norte, Sul, Este, Oeste, Centro)",
-      "Fórmula_ou_Origem": "Fonte: União Africana"
+      "Formula_ou_Origem": "Fonte: União Africana"
     },
     {
       "Coluna": "Capital",
       "Tipo_de_Dado": "Texto",
       "O_que_significa_para_leigos": "Cidade sede do governo do país",
-      "Fórmula_ou_Origem": "Fonte: World Bank Open Data"
+      "Formula_ou_Origem": "Fonte: World Bank Open Data"
     },
     {
       "Coluna": "Grupo_Renda_Banco_Mundial",
       "Tipo_de_Dado": "Texto Categórico",
       "O_que_significa_para_leigos": "Classificação do Banco Mundial pelo nível de renda média da população",
-      "Fórmula_ou_Origem": "Fonte: World Bank Open Data"
+      "Formula_ou_Origem": "Fonte: World Bank Open Data"
     },
     {
       "Coluna": "Idioma_Oficial",
       "Tipo_de_Dado": "Texto",
       "O_que_significa_para_leigos": "Língua ou línguas reconhecidas oficialmente pelo governo do país",
-      "Fórmula_ou_Origem": "Fonte: World Bank Open Data"
+      "Formula_ou_Origem": "Fonte: World Bank Open Data"
     },
     {
       "Coluna": "PIB_XXXX_USD_Bilhões",
       "Tipo_de_Dado": "Moeda (USD Bilhões)",
       "O_que_significa_para_leigos": "Total de riqueza produzida pelo país naquele ano, em milhares de milhões de dólares americanos",
-      "Fórmula_ou_Origem": "Fonte: World Bank — NY.GDP.MKTP.CD dividido por 1 000 000 000"
+      "Formula_ou_Origem": "Fonte: World Bank — NY.GDP.MKTP.CD dividido por 1 000 000 000"
     },
     {
       "Coluna": "PIB_por_Habitante_XXXX_USD",
       "Tipo_de_Dado": "Moeda (USD)",
       "O_que_significa_para_leigos": "Se a riqueza do país fosse dividida igualmente por todos os habitantes, cada pessoa teria este valor",
-      "Fórmula_ou_Origem": "Fonte: World Bank — NY.GDP.PCAP.CD"
+      "Formula_ou_Origem": "Fonte: World Bank — NY.GDP.PCAP.CD"
     },
     {
       "Coluna": "Crescimento_PIB_XXXX_%",
       "Tipo_de_Dado": "Percentagem (%)",
       "O_que_significa_para_leigos": "Em percentagem, quanto a economia cresceu ou encolheu face ao ano anterior — valor positivo é crescimento, negativo é recessão",
-      "Fórmula_ou_Origem": "Fonte: World Bank — NY.GDP.MKTP.KD.ZG"
+      "Formula_ou_Origem": "Fonte: World Bank — NY.GDP.MKTP.KD.ZG"
     },
     {
       "Coluna": "Inflação_2022_%",
       "Tipo_de_Dado": "Percentagem (%)",
       "O_que_significa_para_leigos": "Quanto os preços subiram em média naquele ano — inflação alta significa perda de poder de compra dos cidadãos",
-      "Fórmula_ou_Origem": "Fonte: World Bank — FP.CPI.TOTL.ZG"
+      "Formula_ou_Origem": "Fonte: World Bank — FP.CPI.TOTL.ZG"
     },
     {
       "Coluna": "Dívida_Pública_%_PIB_2022",
       "Tipo_de_Dado": "Percentagem (%)",
       "O_que_significa_para_leigos": "Quanto o governo deve em proporção ao tamanho da economia — acima de 100% é sinal de risco fiscal elevado",
-      "Fórmula_ou_Origem": "Fonte: World Bank — GC.DOD.TOTL.GD.ZS"
+      "Formula_ou_Origem": "Fonte: World Bank — GC.DOD.TOTL.GD.ZS"
     },
     {
       "Coluna": "IDE_Entrada_2022_USD_Bilhões",
       "Tipo_de_Dado": "Moeda (USD Bilhões)",
       "O_que_significa_para_leigos": "Dinheiro estrangeiro que entrou no país para investir — quanto maior, mais confiança os investidores têm na economia",
-      "Fórmula_ou_Origem": "Fonte: World Bank — BX.KLT.DINV.CD.WD dividido por 1 000 000 000"
+      "Formula_ou_Origem": "Fonte: World Bank — BX.KLT.DINV.CD.WD dividido por 1 000 000 000"
     },
     {
       "Coluna": "Populacao_2022_Milhões",
       "Tipo_de_Dado": "Número (Milhões)",
       "O_que_significa_para_leigos": "Número de habitantes do país em 2022, expresso em milhões de pessoas",
-      "Fórmula_ou_Origem": "Fonte: World Bank — SP.POP.TOTL dividido por 1 000 000"
+      "Formula_ou_Origem": "Fonte: World Bank — SP.POP.TOTL dividido por 1 000 000"
     },
     {
       "Coluna": "Crescimento_Acumulado_2000_2023_%",
       "Tipo_de_Dado": "Percentagem (%)",
       "O_que_significa_para_leigos": "Crescimento total da economia entre 2000 e 2023 — mostra a trajectória de longo prazo",
-      "Fórmula_ou_Origem": "Calculado: (PIB_2023 - PIB_2000) \/ PIB_2000 x 100"
+      "Formula_ou_Origem": "Calculado: (PIB_2023 - PIB_2000) \/ PIB_2000 x 100"
     },
     {
       "Coluna": "Crescimento_Boom_Commodities_%",
       "Tipo_de_Dado": "Percentagem (%)",
       "O_que_significa_para_leigos": "Quanto cresceu a economia durante o boom global das matérias-primas, entre 2000 e 2006",
-      "Fórmula_ou_Origem": "Calculado: (PIB_2006 - PIB_2000) \/ PIB_2000 x 100"
+      "Formula_ou_Origem": "Calculado: (PIB_2006 - PIB_2000) \/ PIB_2000 x 100"
     },
     {
       "Coluna": "Impacto_Crise_2009_%",
       "Tipo_de_Dado": "Percentagem (%)",
       "O_que_significa_para_leigos": "Quanto caiu ou cresceu a economia durante a crise financeira global, entre 2006 e 2009",
-      "Fórmula_ou_Origem": "Calculado: (PIB_2009 - PIB_2006) \/ PIB_2006 x 100"
+      "Formula_ou_Origem": "Calculado: (PIB_2009 - PIB_2006) \/ PIB_2006 x 100"
     },
     {
       "Coluna": "Crescimento_Africa_Rising_%",
       "Tipo_de_Dado": "Percentagem (%)",
       "O_que_significa_para_leigos": "Crescimento da economia durante a fase Africa Rising, entre 2010 e 2014",
-      "Fórmula_ou_Origem": "Calculado: (PIB_2014 - PIB_2010) \/ PIB_2010 x 100"
+      "Formula_ou_Origem": "Calculado: (PIB_2014 - PIB_2010) \/ PIB_2010 x 100"
     },
     {
       "Coluna": "Impacto_COVID_%",
       "Tipo_de_Dado": "Percentagem (%)",
       "O_que_significa_para_leigos": "Quanto a economia perdeu em 2020 face a 2019 — mede o impacto directo da pandemia COVID-19",
-      "Fórmula_ou_Origem": "Calculado: (PIB_2020 - PIB_2019) \/ PIB_2019 x 100"
+      "Formula_ou_Origem": "Calculado: (PIB_2020 - PIB_2019) \/ PIB_2019 x 100"
     },
     {
       "Coluna": "Recuperacao_COVID_%",
       "Tipo_de_Dado": "Percentagem (%)",
       "O_que_significa_para_leigos": "Comparação do PIB de 2022 com o nível pré-pandemia de 2019 — positivo significa que superou a crise",
-      "Fórmula_ou_Origem": "Calculado: (PIB_2022 - PIB_2019) \/ PIB_2019 x 100"
+      "Formula_ou_Origem": "Calculado: (PIB_2022 - PIB_2019) \/ PIB_2019 x 100"
     },
     {
       "Coluna": "Crescimento_PIBpc_2000_2023_%",
       "Tipo_de_Dado": "Percentagem (%)",
       "O_que_significa_para_leigos": "Crescimento do PIB por habitante entre 2000 e 2023 — indica melhoria do nível de vida médio",
-      "Fórmula_ou_Origem": "Calculado: (PIBpc_2023 - PIBpc_2000) \/ PIBpc_2000 x 100"
+      "Formula_ou_Origem": "Calculado: (PIBpc_2023 - PIBpc_2000) \/ PIBpc_2000 x 100"
     },
     {
       "Coluna": "Perfil_Económico",
       "Tipo_de_Dado": "Texto Categórico",
       "O_que_significa_para_leigos": "Classificação do tamanho da economia: Grande Economia, Economia em Destaque, Economia Emergente ou Economia em Desenvolvimento",
-      "Fórmula_ou_Origem": "Regra: PIB >= 200B = Grande Economia | >= 80B = Em Destaque | >= 30B = Emergente | < 30B = Em Desenvolvimento"
+      "Formula_ou_Origem": "Regra: PIB >= 200B = Grande Economia | >= 80B = Em Destaque | >= 30B = Emergente | < 30B = Em Desenvolvimento"
     },
     {
       "Coluna": "Status_COVID",
       "Tipo_de_Dado": "Texto Categórico",
       "O_que_significa_para_leigos": "Indica se o país recuperou economicamente ao nível anterior à pandemia COVID-19",
-      "Fórmula_ou_Origem": "Regra: Recuperacao_COVID > 5% = Superou o pre-COVID | 0 a 5% = Recuperou | < 0% = Ainda abaixo"
+      "Formula_ou_Origem": "Regra: Recuperacao_COVID > 5% = Superou o pre-COVID | 0 a 5% = Recuperou | < 0% = Ainda abaixo"
     },
     {
       "Coluna": "Ranking_PIB_2023",
       "Tipo_de_Dado": "Número Inteiro",
       "O_que_significa_para_leigos": "Posição do país entre os 30 analisados pelo tamanho total da economia em 2023 — 1 corresponde à maior",
-      "Fórmula_ou_Origem": "Calculado: rank denso descendente sobre PIB_2023 — empates mantêm a mesma posição sem saltos"
+      "Formula_ou_Origem": "Calculado: rank denso descendente sobre PIB_2023 — empates mantêm a mesma posição sem saltos"
     },
     {
       "Coluna": "Ranking_PIBpc_2023",
       "Tipo_de_Dado": "Número Inteiro",
       "O_que_significa_para_leigos": "Posição do país pelo PIB por habitante em 2023 — 1 corresponde ao valor mais elevado por pessoa",
-      "Fórmula_ou_Origem": "Calculado: rank denso descendente sobre PIB_por_Habitante_2023 — empates mantêm a mesma posição"
+      "Formula_ou_Origem": "Calculado: rank denso descendente sobre PIB_por_Habitante_2023 — empates mantêm a mesma posição"
     },
     {
       "Coluna": "Ranking_Crescimento_Acumulado",
       "Tipo_de_Dado": "Número Inteiro",
       "O_que_significa_para_leigos": "Posição do país pelo crescimento económico acumulado desde 2000 — 1 corresponde ao maior crescimento",
-      "Fórmula_ou_Origem": "Calculado: rank denso descendente sobre Crescimento_Acumulado_2000_2023 — empates sem saltos"
+      "Formula_ou_Origem": "Calculado: rank denso descendente sobre Crescimento_Acumulado_2000_2023 — empates sem saltos"
     },
     {
       "Coluna": "PIB_por_Habitante_2010_USD",
       "Tipo_de_Dado": "Moeda (USD)",
       "O_que_significa_para_leigos": "Estimativa do PIB por habitante em 2010, calculada com base na população estimada desse ano",
-      "Fórmula_ou_Origem": "Calculado: PIB_2010 x 1 000 000 000 \/ Populacao_2010_estimada x 1 000 000"
+      "Formula_ou_Origem": "Calculado: PIB_2010 x 1 000 000 000 \/ Populacao_2010_estimada x 1 000 000"
     },
     {
       "Coluna": "PIB_por_Habitante_2015_USD",
       "Tipo_de_Dado": "Moeda (USD)",
       "O_que_significa_para_leigos": "Estimativa do PIB por habitante em 2015, calculada com base na população estimada desse ano",
-      "Fórmula_ou_Origem": "Calculado: PIB_2015 x 1 000 000 000 \/ Populacao_2015_estimada x 1 000 000"
+      "Formula_ou_Origem": "Calculado: PIB_2015 x 1 000 000 000 \/ Populacao_2015_estimada x 1 000 000"
     },
     {
       "Coluna": "PIB_por_Habitante_2020_USD",
       "Tipo_de_Dado": "Moeda (USD)",
       "O_que_significa_para_leigos": "Estimativa do PIB por habitante em 2020, calculada com base na população estimada desse ano",
-      "Fórmula_ou_Origem": "Calculado: PIB_2020 x 1 000 000 000 \/ Populacao_2020_estimada x 1 000 000"
+      "Formula_ou_Origem": "Calculado: PIB_2020 x 1 000 000 000 \/ Populacao_2020_estimada x 1 000 000"
     },
     {
       "Coluna": "PIB_por_Habitante_2021_USD",
       "Tipo_de_Dado": "Moeda (USD)",
       "O_que_significa_para_leigos": "Estimativa do PIB por habitante em 2021, calculada com base na população estimada desse ano",
-      "Fórmula_ou_Origem": "Calculado: PIB_2021 x 1 000 000 000 \/ Populacao_2021_estimada x 1 000 000"
+      "Formula_ou_Origem": "Calculado: PIB_2021 x 1 000 000 000 \/ Populacao_2021_estimada x 1 000 000"
     }
   ]
 }

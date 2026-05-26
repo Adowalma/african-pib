@@ -112,103 +112,36 @@
     </div>
     <div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/40 overflow-hidden">
       <div class="overflow-x-auto">
-        <table class="w-full text-left border-collapse min-w-[800px]">
+        <table class="w-full text-left border-collapse min-w-200">
           <thead>
             <tr
               class="bg-surface-container-low dark:bg-surface-container text-on-surface-variant border-b border-outline-variant">
-              <th class="px-6 py-4 font-bold text-label-md uppercase tracking-wider">Code</th>
-              <th class="px-6 py-4 font-bold text-label-md uppercase tracking-wider">Indicator Name</th>
-              <th class="px-6 py-4 font-bold text-label-md uppercase tracking-wider">Unit</th>
-              <th class="px-6 py-4 font-bold text-label-md uppercase tracking-wider">Source</th>
-              <th class="px-6 py-4 font-bold text-label-md uppercase tracking-wider text-right">Action</th>
+              <!-- <th class="px-6 py-4 font-bold text-label-md uppercase tracking-wider">Code</th> -->
+              <th class="px-6 py-4 font-bold text-label-md uppercase tracking-wider">Descrição Técnica</th>
+              <th class="px-6 py-4 font-bold text-label-md uppercase tracking-wider">Tipo de dados</th>
+              <th class="px-6 py-4 font-bold text-label-md uppercase tracking-wider">Fórmula ou Origem</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-outline-variant/30">
+            @for (item of dictionaryData; track $index) {
             <tr
               class="zebra-row hover:bg-surface-container/50 dark:hover:bg-white/5 transition-colors cursor-pointer group">
-              <td class="px-6 py-4 font-label-md text-primary dark:text-primary-fixed font-bold">GDP_NOM</td>
+              <!-- <td class="px-6 py-4 font-label-md text-primary dark:text-primary-fixed font-bold"></td> -->
               <td class="px-6 py-4">
                 <div class="flex flex-col">
-                  <span class="font-bold text-on-surface">GDP Nominal</span>
-                  <span class="text-xs text-outline">Market prices converted to USD</span>
+                  <span class="font-label-md text-primary dark:text-primary-fixed font-bold">{{item.Coluna}}</span>
+                  <span class="text-xs text-outline">{{item.O_que_significa_para_leigos}}</span>
                 </div>
               </td>
-              <td class="px-6 py-4 text-sm text-on-surface-variant">USD ($)</td>
+              <td class="px-6 py-4 text-sm text-on-surface-variant">{{item.Tipo_de_Dado}}</td>
               <td class="px-6 py-4">
                 <span
-                  class="text-[10px] font-bold bg-surface-container dark:bg-outline-variant/20 px-2 py-1 rounded border border-outline-variant/40 dark:text-on-surface">World
-                  Bank</span>
+                  class="text-[10px] font-bold bg-surface-container dark:bg-outline-variant/20 px-2 py-1 rounded border border-outline-variant/40 dark:text-on-surface">{{item.Formula_ou_Origem}}</span>
               </td>
-              <td class="px-6 py-4 text-right">
-                <button
-                  class="p-2 rounded-full hover:bg-primary/10 dark:hover:bg-primary-fixed/10 text-primary dark:text-primary-fixed transition-colors">
-                  <span class="material-symbols-outlined text-xl">info</span>
-                </button>
-              </td>
+
             </tr>
-            <tr
-              class="zebra-row hover:bg-surface-container/50 dark:hover:bg-white/5 transition-colors cursor-pointer group">
-              <td class="px-6 py-4 font-label-md text-primary dark:text-primary-fixed font-bold">GDP_CAP</td>
-              <td class="px-6 py-4">
-                <div class="flex flex-col">
-                  <span class="font-bold text-on-surface">GDP Per Capita</span>
-                  <span class="text-xs text-outline">Total GDP divided by population</span>
-                </div>
-              </td>
-              <td class="px-6 py-4 text-sm text-on-surface-variant">USD / Person</td>
-              <td class="px-6 py-4">
-                <span
-                  class="text-[10px] font-bold bg-surface-container dark:bg-outline-variant/20 px-2 py-1 rounded border border-outline-variant/40 dark:text-on-surface">IMF</span>
-              </td>
-              <td class="px-6 py-4 text-right">
-                <button
-                  class="p-2 rounded-full hover:bg-primary/10 dark:hover:bg-primary-fixed/10 text-primary dark:text-primary-fixed transition-colors">
-                  <span class="material-symbols-outlined text-xl">info</span>
-                </button>
-              </td>
-            </tr>
-            <tr
-              class="zebra-row hover:bg-surface-container/50 dark:hover:bg-white/5 transition-colors cursor-pointer group">
-              <td class="px-6 py-4 font-label-md text-primary dark:text-primary-fixed font-bold">DEBT_G_RATIO</td>
-              <td class="px-6 py-4">
-                <div class="flex flex-col">
-                  <span class="font-bold text-on-surface">General Gov. Debt</span>
-                  <span class="text-xs text-outline">Gross debt as percentage of GDP</span>
-                </div>
-              </td>
-              <td class="px-6 py-4 text-sm text-on-surface-variant">Percentage (%)</td>
-              <td class="px-6 py-4">
-                <span
-                  class="text-[10px] font-bold bg-surface-container dark:bg-outline-variant/20 px-2 py-1 rounded border border-outline-variant/40 dark:text-on-surface">AfDB</span>
-              </td>
-              <td class="px-6 py-4 text-right">
-                <button
-                  class="p-2 rounded-full hover:bg-primary/10 dark:hover:bg-primary-fixed/10 text-primary dark:text-primary-fixed transition-colors">
-                  <span class="material-symbols-outlined text-xl">info</span>
-                </button>
-              </td>
-            </tr>
-            <tr
-              class="zebra-row hover:bg-surface-container/50 dark:hover:bg-white/5 transition-colors cursor-pointer group">
-              <td class="px-6 py-4 font-label-md text-primary dark:text-primary-fixed font-bold">FDI_INFLOW</td>
-              <td class="px-6 py-4">
-                <div class="flex flex-col">
-                  <span class="font-bold text-on-surface">Foreign Direct Investment</span>
-                  <span class="text-xs text-outline">Net inflows of foreign capital</span>
-                </div>
-              </td>
-              <td class="px-6 py-4 text-sm text-on-surface-variant">USD ($)</td>
-              <td class="px-6 py-4">
-                <span
-                  class="text-[10px] font-bold bg-surface-container dark:bg-outline-variant/20 px-2 py-1 rounded border border-outline-variant/40 dark:text-on-surface">UNCTAD</span>
-              </td>
-              <td class="px-6 py-4 text-right">
-                <button
-                  class="p-2 rounded-full hover:bg-primary/10 dark:hover:bg-primary-fixed/10 text-primary dark:text-primary-fixed transition-colors">
-                  <span class="material-symbols-outlined text-xl">info</span>
-                </button>
-              </td>
-            </tr>
+            }
+
           </tbody>
         </table>
       </div>
