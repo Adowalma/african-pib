@@ -1,0 +1,69 @@
+{
+  "KPIs Resumo": [
+    {
+      "KPI": "PIB Total Africa 2023",
+      "Valor": "$2765.1 Mil Milhoes USD",
+      "Nota_Explicativa": "Soma do PIB de 30 paises africanos em 2023"
+    },
+    {
+      "KPI": "PIB Total Africa 2000",
+      "Valor": "$704.8 Mil Milhoes USD",
+      "Nota_Explicativa": "Soma do PIB dos mesmos 30 paises no ano 2000"
+    },
+    {
+      "KPI": "Crescimento Total do Continente (2000-2023)",
+      "Valor": "+292.3%",
+      "Nota_Explicativa": "A Africa cresceu quase 4x em tamanho economico em 23 anos"
+    },
+    {
+      "KPI": "Maior Economia (PIB Total) 2023",
+      "Valor": "Nigéria ($497.0B)",
+      "Nota_Explicativa": "O pais com a maior economia medida pelo total produzido"
+    },
+    {
+      "KPI": "Maior PIB por Habitante 2023",
+      "Valor": "Maurícias ($13,200 USD)",
+      "Nota_Explicativa": "O pais onde cada pessoa tem em media mais riqueza gerada"
+    },
+    {
+      "KPI": "Pais com Maior Crescimento Acumulado (2000-2023)",
+      "Valor": "Etiópia (+1800.0%)",
+      "Nota_Explicativa": "O pais que mais multiplicou a sua economia desde o ano 2000"
+    },
+    {
+      "KPI": "Pais com Maior Crescimento Anual em 2023",
+      "Valor": "Senegal (+8.3%)",
+      "Nota_Explicativa": "O pais que mais cresceu em percentagem no ultimo ano registado"
+    },
+    {
+      "KPI": "Pais com Maior Inflacao 2022",
+      "Valor": "Zimbabué (285.0%)",
+      "Nota_Explicativa": "Alta inflacao significa que os precos sobem muito rapidamente"
+    },
+    {
+      "KPI": "Angola - PIB 2023",
+      "Valor": "$84.7 Mil Milhoes USD",
+      "Nota_Explicativa": "Tudo o que Angola produziu e vendeu em 2023, em dolares americanos"
+    },
+    {
+      "KPI": "Angola - PIB por Habitante 2023",
+      "Valor": "$2,757 USD",
+      "Nota_Explicativa": "Em media cada angolano gerou este valor em riqueza durante 2023"
+    },
+    {
+      "KPI": "Angola - Crescimento Acumulado (2000-2023)",
+      "Valor": "+830.8%",
+      "Nota_Explicativa": "Angola multiplicou a sua economia aproximadamente 9x desde o ano 2000"
+    },
+    {
+      "KPI": "Angola - Ranking em Africa (PIB 2023)",
+      "Valor": "#8 em 30 paises analisados",
+      "Nota_Explicativa": "Posicao de Angola entre as 30 maiores economias africanas analisadas"
+    },
+    {
+      "KPI": "Angola - Status COVID",
+      "Valor": "Superou o pré-COVID",
+      "Nota_Explicativa": "Se Angola ja recuperou economicamente do impacto da pandemia COVID-19"
+    }
+  ]
+}

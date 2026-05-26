@@ -1,0 +1,697 @@
+{
+  "Serie Temporal": [
+    {
+      "País": "Nigéria",
+      "Código_ISO3": "NGA",
+      "Região": "Ocidental",
+      "Ano": 2000,
+      "Era_Económica": "Início das Séries",
+      "PIB_USD_Bilhões": 170.7,
+      "Crescimento_vs_2000_%": 0
+    },
+    {
+      "País": "Nigéria",
+      "Código_ISO3": "NGA",
+      "Região": "Ocidental",
+      "Ano": 2006,
+      "Era_Económica": "Boom das Matérias-Primas",
+      "PIB_USD_Bilhões": 236,
+      "Crescimento_vs_2000_%": 38.3
+    },
+    {
+      "País": "Nigéria",
+      "Código_ISO3": "NGA",
+      "Região": "Ocidental",
+      "Ano": 2009,
+      "Era_Económica": "Crise Financeira",
+      "PIB_USD_Bilhões": 297.3,
+      "Crescimento_vs_2000_%": 74.2
+    },
+    {
+      "País": "Nigéria",
+      "Código_ISO3": "NGA",
+      "Região": "Ocidental",
+      "Ano": 2010,
+      "Era_Económica": "Expansão Pós-Crise",
+      "PIB_USD_Bilhões": 369.1,
+      "Crescimento_vs_2000_%": 116.2
+    },
+    {
+      "País": "Nigéria",
+      "Código_ISO3": "NGA",
+      "Região": "Ocidental",
+      "Ano": 2014,
+      "Era_Económica": "Africa Rising",
+      "PIB_USD_Bilhões": 568.5,
+      "Crescimento_vs_2000_%": 233
+    },
+    {
+      "País": "Nigéria",
+      "Código_ISO3": "NGA",
+      "Região": "Ocidental",
+      "Ano": 2015,
+      "Era_Económica": "Choques e Ajustamentos",
+      "PIB_USD_Bilhões": 481.1,
+      "Crescimento_vs_2000_%": 181.8
+    },
+    {
+      "País": "Nigéria",
+      "Código_ISO3": "NGA",
+      "Região": "Ocidental",
+      "Ano": 2019,
+      "Era_Económica": "Pré-COVID",
+      "PIB_USD_Bilhões": 448.1,
+      "Crescimento_vs_2000_%": 162.5
+    },
+    {
+      "País": "Nigéria",
+      "Código_ISO3": "NGA",
+      "Região": "Ocidental",
+      "Ano": 2020,
+      "Era_Económica": "COVID-19",
+      "PIB_USD_Bilhões": 432.3,
+      "Crescimento_vs_2000_%": 153.3
+    },
+    {
+      "País": "Nigéria",
+      "Código_ISO3": "NGA",
+      "Região": "Ocidental",
+      "Ano": 2021,
+      "Era_Económica": "COVID-19",
+      "PIB_USD_Bilhões": 440.8,
+      "Crescimento_vs_2000_%": 158.2
+    },
+    {
+      "País": "Nigéria",
+      "Código_ISO3": "NGA",
+      "Região": "Ocidental",
+      "Ano": 2022,
+      "Era_Económica": "Recuperação",
+      "PIB_USD_Bilhões": 477.4,
+      "Crescimento_vs_2000_%": 179.7
+    },
+    {
+      "País": "Nigéria",
+      "Código_ISO3": "NGA",
+      "Região": "Ocidental",
+      "Ano": 2023,
+      "Era_Económica": "Recuperação",
+      "PIB_USD_Bilhões": 497,
+      "Crescimento_vs_2000_%": 191.2
+    },
+    {
+      "País": "África do Sul",
+      "Código_ISO3": "ZAF",
+      "Região": "Austral",
+      "Ano": 2000,
+      "Era_Económica": "Início das Séries",
+      "PIB_USD_Bilhões": 136.4,
+      "Crescimento_vs_2000_%": 0
+    },
+    {
+      "País": "África do Sul",
+      "Código_ISO3": "ZAF",
+      "Região": "Austral",
+      "Ano": 2006,
+      "Era_Económica": "Boom das Matérias-Primas",
+      "PIB_USD_Bilhões": 271.8,
+      "Crescimento_vs_2000_%": 99.3
+    },
+    {
+      "País": "África do Sul",
+      "Código_ISO3": "ZAF",
+      "Região": "Austral",
+      "Ano": 2009,
+      "Era_Económica": "Crise Financeira",
+      "PIB_USD_Bilhões": 295.8,
+      "Crescimento_vs_2000_%": 116.9
+    },
+    {
+      "País": "África do Sul",
+      "Código_ISO3": "ZAF",
+      "Região": "Austral",
+      "Ano": 2010,
+      "Era_Económica": "Expansão Pós-Crise",
+      "PIB_USD_Bilhões": 375.3,
+      "Crescimento_vs_2000_%": 175.1
+    },
+    {
+      "País": "África do Sul",
+      "Código_ISO3": "ZAF",
+      "Região": "Austral",
+      "Ano": 2014,
+      "Era_Económica": "Africa Rising",
+      "PIB_USD_Bilhões": 381.3,
+      "Crescimento_vs_2000_%": 179.5
+    },
+    {
+      "País": "África do Sul",
+      "Código_ISO3": "ZAF",
+      "Região": "Austral",
+      "Ano": 2015,
+      "Era_Económica": "Choques e Ajustamentos",
+      "PIB_USD_Bilhões": 317.6,
+      "Crescimento_vs_2000_%": 132.8
+    },
+    {
+      "País": "África do Sul",
+      "Código_ISO3": "ZAF",
+      "Região": "Austral",
+      "Ano": 2019,
+      "Era_Económica": "Pré-COVID",
+      "PIB_USD_Bilhões": 351.4,
+      "Crescimento_vs_2000_%": 157.6
+    },
+    {
+      "País": "África do Sul",
+      "Código_ISO3": "ZAF",
+      "Região": "Austral",
+      "Ano": 2020,
+      "Era_Económica": "COVID-19",
+      "PIB_USD_Bilhões": 301.9,
+      "Crescimento_vs_2000_%": 121.3
+    },
+    {
+      "País": "África do Sul",
+      "Código_ISO3": "ZAF",
+      "Região": "Austral",
+      "Ano": 2021,
+      "Era_Económica": "COVID-19",
+      "PIB_USD_Bilhões": 419,
+      "Crescimento_vs_2000_%": 207.2
+    },
+    {
+      "País": "África do Sul",
+      "Código_ISO3": "ZAF",
+      "Região": "Austral",
+      "Ano": 2022,
+      "Era_Económica": "Recuperação",
+      "PIB_USD_Bilhões": 405.9,
+      "Crescimento_vs_2000_%": 197.6
+    },
+    {
+      "País": "África do Sul",
+      "Código_ISO3": "ZAF",
+      "Região": "Austral",
+      "Ano": 2023,
+      "Era_Económica": "Recuperação",
+      "PIB_USD_Bilhões": 377.8,
+      "Crescimento_vs_2000_%": 177
+    },
+    {
+      "País": "Egipto",
+      "Código_ISO3": "EGY",
+      "Região": "Norte",
+      "Ano": 2000,
+      "Era_Económica": "Início das Séries",
+      "PIB_USD_Bilhões": 107.5,
+      "Crescimento_vs_2000_%": 0
+    },
+    {
+      "País": "Egipto",
+      "Código_ISO3": "EGY",
+      "Região": "Norte",
+      "Ano": 2006,
+      "Era_Económica": "Boom das Matérias-Primas",
+      "PIB_USD_Bilhões": 107.4,
+      "Crescimento_vs_2000_%": -0.1
+    },
+    {
+      "País": "Egipto",
+      "Código_ISO3": "EGY",
+      "Região": "Norte",
+      "Ano": 2009,
+      "Era_Económica": "Crise Financeira",
+      "PIB_USD_Bilhões": 188.9,
+      "Crescimento_vs_2000_%": 75.7
+    },
+    {
+      "País": "Egipto",
+      "Código_ISO3": "EGY",
+      "Região": "Norte",
+      "Ano": 2010,
+      "Era_Económica": "Expansão Pós-Crise",
+      "PIB_USD_Bilhões": 218.9,
+      "Crescimento_vs_2000_%": 103.6
+    },
+    {
+      "País": "Egipto",
+      "Código_ISO3": "EGY",
+      "Região": "Norte",
+      "Ano": 2014,
+      "Era_Económica": "Africa Rising",
+      "PIB_USD_Bilhões": 305,
+      "Crescimento_vs_2000_%": 183.7
+    },
+    {
+      "País": "Egipto",
+      "Código_ISO3": "EGY",
+      "Região": "Norte",
+      "Ano": 2015,
+      "Era_Económica": "Choques e Ajustamentos",
+      "PIB_USD_Bilhões": 332.3,
+      "Crescimento_vs_2000_%": 209.1
+    },
+    {
+      "País": "Egipto",
+      "Código_ISO3": "EGY",
+      "Região": "Norte",
+      "Ano": 2019,
+      "Era_Económica": "Pré-COVID",
+      "PIB_USD_Bilhões": 303.1,
+      "Crescimento_vs_2000_%": 182
+    },
+    {
+      "País": "Egipto",
+      "Código_ISO3": "EGY",
+      "Região": "Norte",
+      "Ano": 2020,
+      "Era_Económica": "COVID-19",
+      "PIB_USD_Bilhões": 363.1,
+      "Crescimento_vs_2000_%": 237.8
+    },
+    {
+      "País": "Egipto",
+      "Código_ISO3": "EGY",
+      "Região": "Norte",
+      "Ano": 2021,
+      "Era_Económica": "COVID-19",
+      "PIB_USD_Bilhões": 424.7,
+      "Crescimento_vs_2000_%": 295.1
+    },
+    {
+      "País": "Egipto",
+      "Código_ISO3": "EGY",
+      "Região": "Norte",
+      "Ano": 2022,
+      "Era_Económica": "Recuperação",
+      "PIB_USD_Bilhões": 476.7,
+      "Crescimento_vs_2000_%": 343.4
+    },
+    {
+      "País": "Egipto",
+      "Código_ISO3": "EGY",
+      "Região": "Norte",
+      "Ano": 2023,
+      "Era_Económica": "Recuperação",
+      "PIB_USD_Bilhões": 347.6,
+      "Crescimento_vs_2000_%": 223.3
+    },
+    {
+      "País": "Angola",
+      "Código_ISO3": "AGO",
+      "Região": "Central",
+      "Ano": 2000,
+      "Era_Económica": "Início das Séries",
+      "PIB_USD_Bilhões": 9.1,
+      "Crescimento_vs_2000_%": 0
+    },
+    {
+      "País": "Angola",
+      "Código_ISO3": "AGO",
+      "Região": "Central",
+      "Ano": 2006,
+      "Era_Económica": "Boom das Matérias-Primas",
+      "PIB_USD_Bilhões": 60.9,
+      "Crescimento_vs_2000_%": 569.2
+    },
+    {
+      "País": "Angola",
+      "Código_ISO3": "AGO",
+      "Região": "Central",
+      "Ano": 2009,
+      "Era_Económica": "Crise Financeira",
+      "PIB_USD_Bilhões": 75.5,
+      "Crescimento_vs_2000_%": 729.7
+    },
+    {
+      "País": "Angola",
+      "Código_ISO3": "AGO",
+      "Região": "Central",
+      "Ano": 2010,
+      "Era_Económica": "Expansão Pós-Crise",
+      "PIB_USD_Bilhões": 83.8,
+      "Crescimento_vs_2000_%": 820.9
+    },
+    {
+      "País": "Angola",
+      "Código_ISO3": "AGO",
+      "Região": "Central",
+      "Ano": 2014,
+      "Era_Económica": "Africa Rising",
+      "PIB_USD_Bilhões": 131.4,
+      "Crescimento_vs_2000_%": 1344
+    },
+    {
+      "País": "Angola",
+      "Código_ISO3": "AGO",
+      "Região": "Central",
+      "Ano": 2015,
+      "Era_Económica": "Choques e Ajustamentos",
+      "PIB_USD_Bilhões": 102.6,
+      "Crescimento_vs_2000_%": 1027.5
+    },
+    {
+      "País": "Angola",
+      "Código_ISO3": "AGO",
+      "Região": "Central",
+      "Ano": 2019,
+      "Era_Económica": "Pré-COVID",
+      "PIB_USD_Bilhões": 88.8,
+      "Crescimento_vs_2000_%": 875.8
+    },
+    {
+      "País": "Angola",
+      "Código_ISO3": "AGO",
+      "Região": "Central",
+      "Ano": 2020,
+      "Era_Económica": "COVID-19",
+      "PIB_USD_Bilhões": 53.5,
+      "Crescimento_vs_2000_%": 487.9
+    },
+    {
+      "País": "Angola",
+      "Código_ISO3": "AGO",
+      "Região": "Central",
+      "Ano": 2021,
+      "Era_Económica": "COVID-19",
+      "PIB_USD_Bilhões": 75,
+      "Crescimento_vs_2000_%": 724.2
+    },
+    {
+      "País": "Angola",
+      "Código_ISO3": "AGO",
+      "Região": "Central",
+      "Ano": 2022,
+      "Era_Económica": "Recuperação",
+      "PIB_USD_Bilhões": 124.2,
+      "Crescimento_vs_2000_%": 1264.8
+    },
+    {
+      "País": "Angola",
+      "Código_ISO3": "AGO",
+      "Região": "Central",
+      "Ano": 2023,
+      "Era_Económica": "Recuperação",
+      "PIB_USD_Bilhões": 84.7,
+      "Crescimento_vs_2000_%": 830.8
+    },
+    {
+      "País": "Etiópia",
+      "Código_ISO3": "ETH",
+      "Região": "Oriental",
+      "Ano": 2000,
+      "Era_Económica": "Início das Séries",
+      "PIB_USD_Bilhões": 8.2,
+      "Crescimento_vs_2000_%": 0
+    },
+    {
+      "País": "Etiópia",
+      "Código_ISO3": "ETH",
+      "Região": "Oriental",
+      "Ano": 2006,
+      "Era_Económica": "Boom das Matérias-Primas",
+      "PIB_USD_Bilhões": 16.6,
+      "Crescimento_vs_2000_%": 102.4
+    },
+    {
+      "País": "Etiópia",
+      "Código_ISO3": "ETH",
+      "Região": "Oriental",
+      "Ano": 2009,
+      "Era_Económica": "Crise Financeira",
+      "PIB_USD_Bilhões": 32.4,
+      "Crescimento_vs_2000_%": 295.1
+    },
+    {
+      "País": "Etiópia",
+      "Código_ISO3": "ETH",
+      "Região": "Oriental",
+      "Ano": 2010,
+      "Era_Económica": "Expansão Pós-Crise",
+      "PIB_USD_Bilhões": 29.7,
+      "Crescimento_vs_2000_%": 262.2
+    },
+    {
+      "País": "Etiópia",
+      "Código_ISO3": "ETH",
+      "Região": "Oriental",
+      "Ano": 2014,
+      "Era_Económica": "Africa Rising",
+      "PIB_USD_Bilhões": 55.6,
+      "Crescimento_vs_2000_%": 578
+    },
+    {
+      "País": "Etiópia",
+      "Código_ISO3": "ETH",
+      "Região": "Oriental",
+      "Ano": 2015,
+      "Era_Económica": "Choques e Ajustamentos",
+      "PIB_USD_Bilhões": 64.6,
+      "Crescimento_vs_2000_%": 687.8
+    },
+    {
+      "País": "Etiópia",
+      "Código_ISO3": "ETH",
+      "Região": "Oriental",
+      "Ano": 2019,
+      "Era_Económica": "Pré-COVID",
+      "PIB_USD_Bilhões": 96.1,
+      "Crescimento_vs_2000_%": 1072
+    },
+    {
+      "País": "Etiópia",
+      "Código_ISO3": "ETH",
+      "Região": "Oriental",
+      "Ano": 2020,
+      "Era_Económica": "COVID-19",
+      "PIB_USD_Bilhões": 107.6,
+      "Crescimento_vs_2000_%": 1212.2
+    },
+    {
+      "País": "Etiópia",
+      "Código_ISO3": "ETH",
+      "Região": "Oriental",
+      "Ano": 2021,
+      "Era_Económica": "COVID-19",
+      "PIB_USD_Bilhões": 111.3,
+      "Crescimento_vs_2000_%": 1257.3
+    },
+    {
+      "País": "Etiópia",
+      "Código_ISO3": "ETH",
+      "Região": "Oriental",
+      "Ano": 2022,
+      "Era_Económica": "Recuperação",
+      "PIB_USD_Bilhões": 126.8,
+      "Crescimento_vs_2000_%": 1446.3
+    },
+    {
+      "País": "Etiópia",
+      "Código_ISO3": "ETH",
+      "Região": "Oriental",
+      "Ano": 2023,
+      "Era_Económica": "Recuperação",
+      "PIB_USD_Bilhões": 155.8,
+      "Crescimento_vs_2000_%": 1800
+    },
+    {
+      "País": "Quénia",
+      "Código_ISO3": "KEN",
+      "Região": "Oriental",
+      "Ano": 2000,
+      "Era_Económica": "Início das Séries",
+      "PIB_USD_Bilhões": 12.7,
+      "Crescimento_vs_2000_%": 0
+    },
+    {
+      "País": "Quénia",
+      "Código_ISO3": "KEN",
+      "Região": "Oriental",
+      "Ano": 2006,
+      "Era_Económica": "Boom das Matérias-Primas",
+      "PIB_USD_Bilhões": 25,
+      "Crescimento_vs_2000_%": 96.9
+    },
+    {
+      "País": "Quénia",
+      "Código_ISO3": "KEN",
+      "Região": "Oriental",
+      "Ano": 2009,
+      "Era_Económica": "Crise Financeira",
+      "PIB_USD_Bilhões": 29.5,
+      "Crescimento_vs_2000_%": 132.3
+    },
+    {
+      "País": "Quénia",
+      "Código_ISO3": "KEN",
+      "Região": "Oriental",
+      "Ano": 2010,
+      "Era_Económica": "Expansão Pós-Crise",
+      "PIB_USD_Bilhões": 40,
+      "Crescimento_vs_2000_%": 215
+    },
+    {
+      "País": "Quénia",
+      "Código_ISO3": "KEN",
+      "Região": "Oriental",
+      "Ano": 2014,
+      "Era_Económica": "Africa Rising",
+      "PIB_USD_Bilhões": 61.4,
+      "Crescimento_vs_2000_%": 383.5
+    },
+    {
+      "País": "Quénia",
+      "Código_ISO3": "KEN",
+      "Região": "Oriental",
+      "Ano": 2015,
+      "Era_Económica": "Choques e Ajustamentos",
+      "PIB_USD_Bilhões": 63.7,
+      "Crescimento_vs_2000_%": 401.6
+    },
+    {
+      "País": "Quénia",
+      "Código_ISO3": "KEN",
+      "Região": "Oriental",
+      "Ano": 2019,
+      "Era_Económica": "Pré-COVID",
+      "PIB_USD_Bilhões": 98.8,
+      "Crescimento_vs_2000_%": 678
+    },
+    {
+      "País": "Quénia",
+      "Código_ISO3": "KEN",
+      "Região": "Oriental",
+      "Ano": 2020,
+      "Era_Económica": "COVID-19",
+      "PIB_USD_Bilhões": 98.5,
+      "Crescimento_vs_2000_%": 675.6
+    },
+    {
+      "País": "Quénia",
+      "Código_ISO3": "KEN",
+      "Região": "Oriental",
+      "Ano": 2021,
+      "Era_Económica": "COVID-19",
+      "PIB_USD_Bilhões": 110.3,
+      "Crescimento_vs_2000_%": 768.5
+    },
+    {
+      "País": "Quénia",
+      "Código_ISO3": "KEN",
+      "Região": "Oriental",
+      "Ano": 2022,
+      "Era_Económica": "Recuperação",
+      "PIB_USD_Bilhões": 113.4,
+      "Crescimento_vs_2000_%": 792.9
+    },
+    {
+      "País": "Quénia",
+      "Código_ISO3": "KEN",
+      "Região": "Oriental",
+      "Ano": 2023,
+      "Era_Económica": "Recuperação",
+      "PIB_USD_Bilhões": 118.1,
+      "Crescimento_vs_2000_%": 829.9
+    },
+    {
+      "País": "Marrocos",
+      "Código_ISO3": "MAR",
+      "Região": "Norte",
+      "Ano": 2000,
+      "Era_Económica": "Início das Séries",
+      "PIB_USD_Bilhões": 37,
+      "Crescimento_vs_2000_%": 0
+    },
+    {
+      "País": "Marrocos",
+      "Código_ISO3": "MAR",
+      "Região": "Norte",
+      "Ano": 2006,
+      "Era_Económica": "Boom das Matérias-Primas",
+      "PIB_USD_Bilhões": 65.6,
+      "Crescimento_vs_2000_%": 77.3
+    },
+    {
+      "País": "Marrocos",
+      "Código_ISO3": "MAR",
+      "Região": "Norte",
+      "Ano": 2009,
+      "Era_Económica": "Crise Financeira",
+      "PIB_USD_Bilhões": 88.9,
+      "Crescimento_vs_2000_%": 140.3
+    },
+    {
+      "País": "Marrocos",
+      "Código_ISO3": "MAR",
+      "Região": "Norte",
+      "Ano": 2010,
+      "Era_Económica": "Expansão Pós-Crise",
+      "PIB_USD_Bilhões": 90.8,
+      "Crescimento_vs_2000_%": 145.4
+    },
+    {
+      "País": "Marrocos",
+      "Código_ISO3": "MAR",
+      "Região": "Norte",
+      "Ano": 2014,
+      "Era_Económica": "Africa Rising",
+      "PIB_USD_Bilhões": 109,
+      "Crescimento_vs_2000_%": 194.6
+    },
+    {
+      "País": "Marrocos",
+      "Código_ISO3": "MAR",
+      "Região": "Norte",
+      "Ano": 2015,
+      "Era_Económica": "Choques e Ajustamentos",
+      "PIB_USD_Bilhões": 101.3,
+      "Crescimento_vs_2000_%": 173.8
+    },
+    {
+      "País": "Marrocos",
+      "Código_ISO3": "MAR",
+      "Região": "Norte",
+      "Ano": 2019,
+      "Era_Económica": "Pré-COVID",
+      "PIB_USD_Bilhões": 119.7,
+      "Crescimento_vs_2000_%": 223.5
+    },
+    {
+      "País": "Marrocos",
+      "Código_ISO3": "MAR",
+      "Região": "Norte",
+      "Ano": 2020,
+      "Era_Económica": "COVID-19",
+      "PIB_USD_Bilhões": 114.7,
+      "Crescimento_vs_2000_%": 210
+    },
+    {
+      "País": "Marrocos",
+      "Código_ISO3": "MAR",
+      "Região": "Norte",
+      "Ano": 2021,
+      "Era_Económica": "COVID-19",
+      "PIB_USD_Bilhões": 132.7,
+      "Crescimento_vs_2000_%": 258.6
+    },
+    {
+      "País": "Marrocos",
+      "Código_ISO3": "MAR",
+      "Região": "Norte",
+      "Ano": 2022,
+      "Era_Económica": "Recuperação",
+      "PIB_USD_Bilhões": 142.9,
+      "Crescimento_vs_2000_%": 286.2
+    },
+    {
+      "País": "Marrocos",
+      "Código_ISO3": "MAR",
+      "Região": "Norte",
+      "Ano": 2023,
+      "Era_Económica": "Recuperação",
+      "PIB_USD_Bilhões": 145.4,
+      "Crescimento_vs_2000_%": 293
+    }
+  ]
+}
