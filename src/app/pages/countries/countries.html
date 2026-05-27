@@ -10,11 +10,13 @@
       <div
         class="bg-white dark:bg-inverse-surface shadow-sm border border-outline-variant/40 rounded-xl px-4 py-2 flex items-center gap-3">
         <span class="text-[11px] font-bold text-on-surface-variant uppercase">Periodo</span>
-        <div class="h-4 w-[1px] bg-outline-variant"></div>
+        <div class="h-4 w-px] bg-outline-variant"></div>
         <select
-          class="bg-transparent border-none text-sm font-bold text-primary dark:text-primary-fixed focus:ring-0 cursor-pointer p-0 pr-6">
-          <option>2000 — 2023</option>
-          <option>2015 — 2023</option>
+          class="bg-transparent border-none text-sm font-bold text-primary dark:text-primary-fixed focus:ring-0 cursor-pointer p-0 pr-6"
+          [value]='selectedYear()' (change)="onYearChange($event)">
+          @for (year of years; track $index) {
+          <option [value]="year">{{year}}</option>
+          }
         </select>
       </div>
       <button
@@ -36,7 +38,7 @@
       <div class="flex items-baseline gap-2">
         <h3 class="text-data-numeric font-bold">$3.1T</h3>
         <span class="text-primary text-[12px] font-bold flex items-center">
-          <span class="material-symbols-outlined !text-[14px]">trending_up</span> 4.2%
+          <span class="material-symbols-outlined text-[14px]!">trending_up</span> 4.2%
         </span>
       </div>
       <p class="text-[11px] text-on-surface-variant mt-1 opacity-70">Previsão anual vs 2022</p>
@@ -51,7 +53,7 @@
       <div class="flex items-baseline gap-2">
         <h3 class="text-data-numeric font-bold">3.8%</h3>
         <span class="text-error text-[12px] font-bold flex items-center">
-          <span class="material-symbols-outlined !text-[14px]">trending_down</span> 0.5%
+          <span class="material-symbols-outlined text-[14px]!">trending_down</span> 0.5%
         </span>
       </div>
       <p class="text-[11px] text-on-surface-variant mt-1 opacity-70">Abaixo da meta de 4.3%</p>
@@ -96,25 +98,28 @@
         </div>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <!-- Nigeria Card -->
+        @for (item of selectedYearData(); track $index) {
         <div class="bg-white dark:bg-inverse-surface rounded-xl border border-outline-variant/20 p-5 kpi-card group">
           <div class="flex justify-between mb-4">
             <div class="flex items-center gap-3">
-              <img alt="NGA" class="w-8 h-5 rounded-sm object-cover"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJKe9et5oH8R6QkT58fElW3dkdrhcmAFUvLrdJ1ibgI1wBM4D8AJk4mdO0OnUGEPGxmtdY592Kc65HA_zssnF4da8MT0NbyaJbxfNll4mqJqnbzP1dJPvzSu3BrKZfLXTcFQuPq3sTNqAtfmdwEjtlZNpXw79qm-CvbgJJmDMMUJDxw48nadFCBfdQBjZsyNjUln2nCpBDbi4U9Q3gJqr0IBapgn3nN1EpDYnG9XOtpBUGy-r8qDjU47AN3BXr3IU4A0_VSUO_XQw" />
-              <span class="font-bold">Nigéria</span>
+
+              <img [alt]="'Bandeira de '+ item.country" class="w-8 h-5 rounded-sm object-cover"
+                [src]="'https://flagcdn.com/'+ item.code.toLowerCase().substring(0,2) +'.svg'" />
+              <span class="font-bold">{{item.country}}</span>
             </div>
-            <span
-              class="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded-full font-bold uppercase">Resiliência</span>
+            <button
+              class="p-2 rounded-full hover:bg-primary/10 dark:hover:bg-primary-fixed/10 text-primary dark:text-primary-fixed transition-colors">
+              <span class="material-symbols-outlined text-xl">info</span>
+            </button>
           </div>
           <div class="grid grid-cols-2 gap-4 mb-4">
             <div>
               <span class="text-[11px] text-on-surface-variant uppercase block mb-1">PIB Nominal</span>
-              <span class="font-bold text-sm">$477.3B</span>
+              <span class="font-bold text-sm">${{item.pib}}B</span>
             </div>
             <div>
               <span class="text-[11px] text-on-surface-variant uppercase block mb-1">Crescimento</span>
-              <span class="font-bold text-sm text-primary">+3.2%</span>
+              <span class="font-bold text-sm text-primary">{{item.pibGrow}}%</span>
             </div>
           </div>
           <div class="h-10 flex items-end gap-1 px-1">
@@ -125,35 +130,7 @@
             <div class="flex-1 bg-primary h-[90%] rounded-sm"></div>
           </div>
         </div>
-        <!-- Egypt Card -->
-        <div class="bg-white dark:bg-inverse-surface rounded-xl border border-outline-variant/20 p-5 kpi-card group">
-          <div class="flex justify-between mb-4">
-            <div class="flex items-center gap-3">
-              <img alt="EGY" class="w-8 h-5 rounded-sm object-cover"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSdYtEjAOH6xTaXtV9uACKmm9fYj4NTSqWhwKoniArLZMnkClGT9KS1cUvCoztuC-MsA9sA7BKYDPSdXTcmIizDtWZ9CL9RnQrRujUG9ioSosYKnGKItnUHnKbNSnftDU8vGFYVZI6HCwp9dzCleX8bmGdfSCya-VzEjHpixqcdpGFU0xXcZjcwHVB2dznVSvZkAs4Jk__F3EZEvXsEmlOPkxZb1DIbKs4ES1G5_hHHvcqg_zOE5uQcuaVXlx73X2angUmMt3uAgY" />
-              <span class="font-bold">Egito</span>
-            </div>
-            <span
-              class="text-[10px] bg-secondary-container/20 text-secondary px-2 py-0.5 rounded-full font-bold uppercase">Digital</span>
-          </div>
-          <div class="grid grid-cols-2 gap-4 mb-4">
-            <div>
-              <span class="text-[11px] text-on-surface-variant uppercase block mb-1">PIB Nominal</span>
-              <span class="font-bold text-sm">$398.4B</span>
-            </div>
-            <div>
-              <span class="text-[11px] text-on-surface-variant uppercase block mb-1">Crescimento</span>
-              <span class="font-bold text-sm text-primary">+4.1%</span>
-            </div>
-          </div>
-          <div class="h-10 flex items-end gap-1 px-1">
-            <div class="flex-1 bg-secondary/10 h-[50%] rounded-sm"></div>
-            <div class="flex-1 bg-secondary/20 h-[70%] rounded-sm"></div>
-            <div class="flex-1 bg-secondary/40 h-[45%] rounded-sm"></div>
-            <div class="flex-1 bg-secondary/30 h-[80%] rounded-sm"></div>
-            <div class="flex-1 bg-secondary h-[65%] rounded-sm"></div>
-          </div>
-        </div>
+        }
       </div>
       <!-- Growth Chart Area -->
       <div class="bg-white dark:bg-inverse-surface rounded-xl border border-outline-variant/20 p-6">
