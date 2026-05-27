@@ -1,439 +1,221 @@
-<body class="bg-surface text-on-surface transition-colors duration-200">
-  <div class="flex h-screen overflow-hidden">
-
-
-    <!-- Main Content Area -->
-    <main class="flex-1 flex flex-col overflow-hidden">
-      <!-- Top Navigation / Header -->
-
-      <!-- Dashboard Body -->
-      <div class="flex-1 overflow-y-auto custom-scrollbar p-8">
-        <div class="w-full mx-auto space-y-gutter">
-          <!-- Dashboard Titles -->
-          <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
-            <div>
-              <h2 class="text-headline-lg md:text-4xl text-on-surface dark:text-white font-extrabold tracking-tight">
-                African Regional Analysis</h2>
-              <p class="text-body-md text-on-surface-variant dark:text-on-surface-variant/80 mt-1">Real-time
-                macroeconomic reporting for Q4 2024 performance clusters.</p>
-            </div>
-            <div class="flex gap-2">
-              <button
-                class="flex items-center gap-2 bg-white dark:bg-surface-container border border-outline-variant/30 px-4 py-2 rounded-lg text-label-md font-bold hover:bg-surface-container transition-all shadow-sm">
-                <span class="material-symbols-outlined text-[18px] text-primary">calendar_today</span>
-                <span>2024-2025</span>
-                <span class="material-symbols-outlined text-[18px] opacity-40">expand_more</span>
-              </button>
-            </div>
+<div class="flex-1 overflow-y-auto custom-scrollbar p-8">
+  <div class="w-full mx-auto space-y-gutter">
+    <!-- Dashboard Titles -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+      <div>
+        <h2 class="text-headline-lg md:text-4xl text-on-surface dark:text-white font-extrabold tracking-tight">
+          Análise Regional Africana</h2>
+        <p class="text-body-md text-on-surface-variant dark:text-on-surface-variant/80 mt-1">Real-time
+          macroeconomic reporting for Q4 2024 performance clusters.</p>
+      </div>
+      <div class="flex gap-2">
+        <button
+          class="flex items-center gap-2 bg-white dark:bg-surface-container border border-outline-variant/30 px-4 py-2 rounded-lg text-label-md font-bold hover:bg-surface-container transition-all shadow-sm">
+          <span class="material-symbols-outlined text-[18px] text-primary">calendar_today</span>
+          <select
+            class="bg-transparent border-none text-sm font-bold text-primary dark:text-primary-fixed focus:ring-0 cursor-pointer p-0 pr-6"
+            [value]='selectedYear()' (change)="filteredData()">
+            @for (year of years; track $index) {
+            <option [value]="year">{{year}}</option>
+            }
+          </select>
+        </button>
+      </div>
+    </div>
+    <!-- 12-Column Grid -->
+    <div class="grid grid-cols-12 gap-gutter">
+      <!-- Map Card (8 Columns) -->
+      <div class="col-span-12 xl:col-span-8 modern-card rounded-xl p-card-padding flex flex-col min-h-125">
+        <div class="flex justify-between items-center mb-8">
+          <div>
+            <h3 class="text-headline-sm text-on-surface dark:text-white">Geographic Region Selector</h3>
+            <p class="text-body-md text-on-surface-variant">Click map region to isolate local KPIs</p>
           </div>
-          <!-- 12-Column Grid -->
-          <div class="grid grid-cols-12 gap-gutter">
-            <!-- Map Card (8 Columns) -->
-            <div class="col-span-12 xl:col-span-8 modern-card rounded-xl p-card-padding flex flex-col min-h-125">
-              <div class="flex justify-between items-center mb-8">
-                <div>
-                  <h3 class="text-headline-sm text-on-surface dark:text-white">Geographic Region Selector</h3>
-                  <p class="text-body-md text-on-surface-variant">Click map region to isolate local KPIs</p>
-                </div>
-                <button
-                  class="text-primary dark:text-primary-fixed text-label-md font-black flex items-center gap-1 hover:opacity-70 transition-opacity"
-                  id="reset-map">
-                  <span class="material-symbols-outlined text-[18px]"
-                    (click)="regional.set('Continental')">refresh</span>
-                  RESET
-                </button>
-              </div>
-              <div class="flex-1 flex items-center justify-center relative">
-                <div class="w-full max-w-125">
-                  <svg class="w-full h-auto drop-shadow-2xl" viewBox="0 0 400 450" xmlns="http://www.w3.org/2000/svg">
-                    <path class="africa-map-path" d="M100 50 L300 50 L320 120 L280 150 L120 150 L80 120 Z"
-                      id="region-north" (click)="regional.set('north')" [class.north]="regional() =='north'"></path>
-                    <text class="region-label" text-anchor="middle" x="200" y="90">North</text>
-                    <path class="africa-map-path" d="M50 140 L120 150 L120 220 L70 240 L30 200 Z" id="region-west"
-                      (click)="regional.set('west')" [class.west]="regional() =='west'">
-                    </path>
-                    <text class="region-label" text-anchor="middle" x="75" y="195">West</text>
-                    <path class="africa-map-path" d="M120 150 L250 150 L250 280 L180 300 L120 220 Z" id="region-central"
-                      (click)="regional.set('central')" [class.central]="regional() =='central'"></path>
-                    <text class="region-label" text-anchor="middle" x="185" y="225">Central</text>
-                    <path class="africa-map-path" d="M250 150 L350 120 L380 200 L320 300 L250 280 Z" id="region-east"
-                      (click)="regional.set('east')" [class.east]="regional() =='east'">
-                    </path>
-                    <text class="region-label" text-anchor="middle" x="310" y="215">East</text>
-                    <path class="africa-map-path" d="M150 300 L280 280 L320 300 L250 420 L150 400 Z" id="region-south"
-                      (click)="regional.set('south')" [class.south]="regional() =='south'">
-                    </path>
-                    <text class="region-label" text-anchor="middle" x="225" y="350">South</text>
-                  </svg>
-                  <div
-                    class="absolute hidden pointer-events-none bg-on-surface text-white px-3 py-1.5 rounded text-[11px] font-black shadow-lg transform -translate-x-1/2 -translate-y-full mb-2"
-                    id="map-tooltip">
-                    REGION
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Dynamic KPI Sidebar (4 Columns) -->
-            <div class="col-span-12 xl:col-span-4 flex flex-col gap-gutter">
-              <!-- KPI Card 1 -->
-              <div
-                class="bg-primary dark:bg-primary-container modern-card rounded-xl p-card-padding relative overflow-hidden group"
-                id="kpi-card-1">
-                <div class="relative z-10">
-                  <h4 class="text-label-md text-white/70 dark:text-primary-fixed/70 uppercase tracking-widest mb-3"
-                    id="kpi-label-1">Total {{regional()}} GDP</h4>
-                  <div class="text-white text-4xl font-extrabold tracking-tight mb-4" id="kpi-value-1">$2.98T</div>
-                  <div class="flex items-center gap-2 bg-white/10 w-fit px-3 py-1.5 rounded-lg border border-white/10">
-                    <span class="material-symbols-outlined text-[18px] text-primary-fixed">trending_up</span>
-                    <span class="text-label-md font-bold text-white" id="kpi-trend-1">3.4% vs LY</span>
-                  </div>
-                </div>
-                <div
-                  class="absolute -right-4 -top-4 w-32 h-32 bg-white/5 rounded-full blur-2xl group-hover:scale-125 transition-transform duration-700">
-                </div>
-              </div>
-              <!-- KPI Card 2 -->
-              <div class="bg-secondary-container modern-card rounded-xl p-card-padding" id="kpi-card-2">
-                <h4 class="text-label-md text-on-secondary-container/70 uppercase tracking-widest mb-3"
-                  id="kpi-label-2">FX Reserves (Avg)</h4>
-                <div class="text-on-secondary-container text-4xl font-extrabold tracking-tight mb-4" id="kpi-value-2">
-                  $422.5B</div>
-                <div class="flex items-center gap-1.5 text-on-secondary-container/60">
-                  <span class="material-symbols-outlined text-[16px]">history</span>
-                  <span class="text-[12px] font-medium" id="kpi-meta-2">Updated 24h ago</span>
-                </div>
-              </div>
-              <!-- KPI Card 3 -->
-              <div class="modern-card rounded-xl p-card-padding" id="kpi-card-3">
-                <div class="flex items-center gap-4 mb-4">
-                  <div
-                    class="w-10 h-10 rounded-lg bg-primary/5 flex items-center justify-center text-primary border border-primary/10">
-                    <span class="material-symbols-outlined text-[24px] fill-current">verified</span>
-                  </div>
-                  <div class="flex-1 min-w-0">
-                    <h4 class="text-label-md font-bold text-on-surface dark:text-white uppercase truncate"
-                      id="kpi-label-3">Integrity Score</h4>
-                    <p class="text-[12px] text-on-surface-variant truncate" id="kpi-meta-3">Institutional: 98.4%</p>
-                  </div>
-                </div>
-                <div
-                  class="w-full bg-surface-container-high dark:bg-surface-variant/30 rounded-full h-1.5 overflow-hidden">
-                  <div class="bg-primary h-full rounded-full transition-all duration-700" id="kpi-progress-3"
-                    style="width: 98.4%"></div>
-                </div>
-              </div>
-              <!-- Mini Chart or Legend -->
-              <div class="modern-card rounded-xl p-4 flex-1">
-                <div class="text-label-md font-bold text-on-surface-variant uppercase tracking-widest mb-4">Regional
-                  Status Index</div>
-                <div class="space-y-3">
-                  <div class="flex justify-between items-center text-[12px]">
-                    <span class="text-on-surface-variant flex items-center gap-2"><span
-                        class="w-2 h-2 rounded-full bg-emerald-500"></span> Stable</span>
-                    <span class="font-bold">3 Regions</span>
-                  </div>
-                  <div class="flex justify-between items-center text-[12px]">
-                    <span class="text-on-surface-variant flex items-center gap-2"><span
-                        class="w-2 h-2 rounded-full bg-amber-500"></span> Caution</span>
-                    <span class="font-bold">1 Region</span>
-                  </div>
-                  <div class="flex justify-between items-center text-[12px]">
-                    <span class="text-on-surface-variant flex items-center gap-2"><span
-                        class="w-2 h-2 rounded-full bg-blue-500"></span> Emerging</span>
-                    <span class="font-bold">1 Region</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Macro Table (12 Columns) -->
-            <div class="col-span-12 modern-card rounded-xl overflow-hidden">
-              <div class="p-card-padding border-b border-outline-variant/30 flex justify-between items-center">
-                <div>
-                  <h3 class="text-headline-sm text-on-surface dark:text-white">Macroeconomic Stability Matrix</h3>
-                  <p class="text-[13px] text-on-surface-variant mt-1">Inflation and Debt-to-GDP benchmarked by regional
-                    clusters.</p>
-                </div>
-                <button
-                  class="bg-surface-container-low dark:bg-surface-container text-primary dark:text-primary-fixed border border-outline-variant/20 px-4 py-2 rounded-lg text-label-md font-bold hover:bg-surface-container-high transition-all flex items-center gap-2">
-                  <span class="material-symbols-outlined text-[18px]">download</span>
-                  <span>CSV</span>
-                </button>
-              </div>
-              <div class="overflow-x-auto custom-scrollbar">
-                <table class="w-full text-left">
-                  <thead>
-                    <tr class="bg-surface-container-lowest dark:bg-inverse-surface border-b border-outline-variant/10">
-                      <th
-                        class="px-card-padding py-4 text-[11px] text-on-surface-variant/70 uppercase tracking-widest font-black">
-                        Region</th>
-                      <th
-                        class="px-card-padding py-4 text-[11px] text-on-surface-variant/70 uppercase tracking-widest font-black text-right">
-                        Avg Inflation (%)</th>
-                      <th
-                        class="px-card-padding py-4 text-[11px] text-on-surface-variant/70 uppercase tracking-widest font-black text-right">
-                        Debt / GDP (%)</th>
-                      <th
-                        class="px-card-padding py-4 text-[11px] text-on-surface-variant/70 uppercase tracking-widest font-black text-center">
-                        Status</th>
-                      <th
-                        class="px-card-padding py-4 text-[11px] text-on-surface-variant/70 uppercase tracking-widest font-black">
-                        Primary Sector</th>
-                    </tr>
-                  </thead>
-                  <tbody class="divide-y divide-outline-variant/5">
-                    <tr
-                      class="hover:bg-surface-container-low dark:hover:bg-surface-container/50 cursor-pointer transition-colors"
-                      onclick="selectRegion('north')">
-                      <td class="px-card-padding py-4">
-                        <div class="flex items-center gap-3">
-                          <div class="w-2 h-8 rounded-full region-gradient-north"></div>
-                          <div>
-                            <div class="font-bold text-on-surface dark:text-white">North Africa</div>
-                            <div class="text-[10px] text-on-surface-variant/60 font-black uppercase tracking-tighter">6
-                              Countries</div>
-                          </div>
-                        </div>
-                      </td>
-                      <td
-                        class="px-card-padding py-4 text-right font-bold text-on-surface dark:text-white tabular-nums">
-                        12.4%</td>
-                      <td
-                        class="px-card-padding py-4 text-right font-bold text-on-surface dark:text-white tabular-nums">
-                        85.2%</td>
-                      <td class="px-card-padding py-4 text-center">
-                        <span
-                          class="inline-flex items-center px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 text-[10px] font-black uppercase tracking-widest">Caution</span>
-                      </td>
-                      <td class="px-card-padding py-4 text-on-surface-variant text-[13px]">Petrochemicals &amp; Tourism
-                      </td>
-                    </tr>
-                    <tr
-                      class="hover:bg-surface-container-low dark:hover:bg-surface-container/50 cursor-pointer transition-colors"
-                      onclick="selectRegion('west')">
-                      <td class="px-card-padding py-4">
-                        <div class="flex items-center gap-3">
-                          <div class="w-2 h-8 rounded-full region-gradient-west"></div>
-                          <div>
-                            <div class="font-bold text-on-surface dark:text-white">West Africa</div>
-                            <div class="text-[10px] text-on-surface-variant/60 font-black uppercase tracking-tighter">15
-                              Countries</div>
-                          </div>
-                        </div>
-                      </td>
-                      <td
-                        class="px-card-padding py-4 text-right font-bold text-on-surface dark:text-white tabular-nums">
-                        15.8%</td>
-                      <td
-                        class="px-card-padding py-4 text-right font-bold text-on-surface dark:text-white tabular-nums">
-                        62.4%</td>
-                      <td class="px-card-padding py-4 text-center">
-                        <span
-                          class="inline-flex items-center px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-[10px] font-black uppercase tracking-widest">Stable</span>
-                      </td>
-                      <td class="px-card-padding py-4 text-on-surface-variant text-[13px]">Agriculture &amp; Mining</td>
-                    </tr>
-                    <tr
-                      class="hover:bg-surface-container-low dark:hover:bg-surface-container/50 cursor-pointer transition-colors"
-                      onclick="selectRegion('east')">
-                      <td class="px-card-padding py-4">
-                        <div class="flex items-center gap-3">
-                          <div class="w-2 h-8 rounded-full region-gradient-east"></div>
-                          <div>
-                            <div class="font-bold text-on-surface dark:text-white">East Africa</div>
-                            <div class="text-[10px] text-on-surface-variant/60 font-black uppercase tracking-tighter">14
-                              Countries</div>
-                          </div>
-                        </div>
-                      </td>
-                      <td
-                        class="px-card-padding py-4 text-right font-bold text-on-surface dark:text-white tabular-nums">
-                        7.2%</td>
-                      <td
-                        class="px-card-padding py-4 text-right font-bold text-on-surface dark:text-white tabular-nums">
-                        58.1%</td>
-                      <td class="px-card-padding py-4 text-center">
-                        <span
-                          class="inline-flex items-center px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-[10px] font-black uppercase tracking-widest">Stable</span>
-                      </td>
-                      <td class="px-card-padding py-4 text-on-surface-variant text-[13px]">Services &amp; Tech Hubs</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <!-- Spotlight Card (7 Columns) -->
+          <button
+            class="text-primary dark:text-primary-fixed text-label-md font-black flex items-center gap-1 hover:opacity-70 transition-opacity"
+            id="reset-map">
+            <span class="material-symbols-outlined text-[18px]" (click)="regional.set('Continental')">refresh</span>
+            RESET
+          </button>
+        </div>
+        <div class="flex-1 flex items-center justify-center relative">
+          <div class="w-full max-w-125">
+            <svg class="w-full h-auto drop-shadow-2xl" viewBox="0 0 400 450" xmlns="http://www.w3.org/2000/svg">
+              <path class="africa-map-path" d="M100 50 L300 50 L320 120 L280 150 L120 150 L80 120 Z" id="region-north"
+                (click)="regional.set('north')" [class.north]="regional() =='north'"></path>
+              <text class="region-label" text-anchor="middle" x="200" y="90">Norte</text>
+              <path class="africa-map-path" d="M50 140 L120 150 L120 220 L70 240 L30 200 Z" id="region-west"
+                (click)="regional.set('west')" [class.west]="regional() =='west'">
+              </path>
+              <text class="region-label" text-anchor="middle" x="75" y="195">Ocindental</text>
+              <path class="africa-map-path" d="M120 150 L250 150 L250 280 L180 300 L120 220 Z" id="region-central"
+                (click)="regional.set('central')" [class.central]="regional() =='central'"></path>
+              <text class="region-label" text-anchor="middle" x="185" y="225">Central</text>
+              <path class="africa-map-path" d="M250 150 L350 120 L380 200 L320 300 L250 280 Z" id="region-east"
+                (click)="regional.set('east')" [class.east]="regional() =='east'">
+              </path>
+              <text class="region-label" text-anchor="middle" x="310" y="215">Oriental</text>
+              <path class="africa-map-path" d="M150 300 L280 280 L320 300 L250 420 L150 400 Z" id="region-south"
+                (click)="regional.set('south')" [class.south]="regional() =='south'">
+              </path>
+              <text class="region-label" text-anchor="middle" x="225" y="350">Austral</text>
+            </svg>
             <div
-              class="col-span-12 lg:col-span-7 modern-card rounded-xl p-6 flex flex-col md:flex-row gap-6 items-stretch group relative overflow-hidden">
-              <div class="absolute right-0 top-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 blur-3xl"></div>
-              <div class="w-full md:w-56 h-48 md:h-auto rounded-lg overflow-hidden shadow-sm flex-shrink-0">
-                <img alt="African urban development"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmxkmRRo4zDWUROFP2EVUEBZaXEvgHrq3jsug4EAw9hpXTKzbUhIiJI_NubJYbtK2rCbkhu1irlQPMVGNg00nFtznq80QUHGfP_jwnEq9EjIkpJYHRfKKyjnNPrNyhcjL4oiZ0vK_FOZzwp_nfFX2L7o1VbaHlFvg6IemRzoliUk0hlrksr73rhrtjbKcbysxwRp5S_G6eE-uY5kCiIsVmN-SpzcdHgB5aA7EowlBRakulOCET56MLd7121-VbvWtgcf2UKOYz_JU" />
-              </div>
-              <div class="flex-1 flex flex-col justify-between py-1">
-                <div>
-                  <div class="flex items-center gap-2 mb-3">
-                    <span
-                      class="bg-primary text-white text-[9px] font-black uppercase tracking-widest px-2 py-0.5 rounded">REGIONAL
-                      SPOTLIGHT</span>
-                    <div class="h-px bg-outline-variant/30 flex-1"></div>
-                  </div>
-                  <h3 class="text-headline-md text-on-surface dark:text-white mb-2 leading-tight font-extrabold"
-                    id="spotlight-title">Growth Acceleration in East Africa</h3>
-                  <p class="text-body-md text-on-surface-variant dark:text-on-surface-variant/80 line-clamp-3"
-                    id="spotlight-desc">Kenya and Ethiopia drive regional growth of 6.2%, outpacing continental averages
-                    through digital diversification.</p>
-                </div>
-                <a class="inline-flex items-center gap-2 text-primary dark:text-primary-fixed font-bold text-label-md hover:translate-x-1 transition-transform mt-4"
-                  href="#">
-                  <span>Read Full Analysis</span>
-                  <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-                </a>
-              </div>
-            </div>
-            <!-- Footnote / Methodology (5 Columns) -->
-            <div
-              class="col-span-12 lg:col-span-5 bg-surface-container-low dark:bg-surface-container rounded-xl p-card-padding flex flex-col justify-between">
-              <div class="space-y-4">
-                <div class="flex items-center gap-3">
-                  <span class="material-symbols-outlined text-primary text-[28px]">info</span>
-                  <h4 class="font-bold text-on-surface dark:text-white uppercase tracking-wider text-[12px]">Data
-                    Methodology</h4>
-                </div>
-                <p class="text-[13px] text-on-surface-variant leading-relaxed">Aggregated data sourced from World Bank
-                  Open Data &amp; IMF International Financial Statistics. All currency values normalized to USD. Updates
-                  cycle every 24 hours at 00:00 UTC.</p>
-              </div>
-              <div
-                class="pt-6 border-t border-outline-variant/20 mt-6 flex gap-6 text-[10px] font-bold text-on-surface-variant/50 uppercase tracking-[0.2em]">
-                <span>© 2024 GDP AFRICA</span>
-                <span>AUDITED Q4</span>
-              </div>
+              class="absolute hidden pointer-events-none bg-on-surface text-white px-3 py-1.5 rounded text-[11px] font-black shadow-lg transform -translate-x-1/2 -translate-y-full mb-2"
+              id="map-tooltip">
+              REGION
             </div>
           </div>
         </div>
       </div>
-    </main>
+      <!-- Dynamic KPI Sidebar (4 Columns) -->
+      <div class="col-span-12 xl:col-span-4 flex flex-col gap-gutter">
+        <!-- KPI Card 1 -->
+        <div
+          class="bg-primary dark:bg-primary-container modern-card rounded-xl p-card-padding relative overflow-hidden group"
+          id="kpi-card-1">
+          <div class="relative z-10">
+            <h4 class="text-label-md text-white/70 dark:text-primary-fixed/70 uppercase tracking-widest mb-3"
+              id="kpi-label-1">Total {{regional()}} GDP</h4>
+            <div class="text-white text-4xl font-extrabold tracking-tight mb-4" id="kpi-value-1">
+              {{filteredData()?.pibTotal}}</div>
+            <div class="flex items-center gap-2 bg-white/10 w-fit px-3 py-1.5 rounded-lg border border-white/10">
+              <span class="material-symbols-outlined text-[18px] text-primary-fixed">trending_up</span>
+              <span class="text-label-md font-bold text-white" id="kpi-trend-1">3.4% vs LY</span>
+            </div>
+          </div>
+          <div
+            class="absolute -right-4 -top-4 w-32 h-32 bg-white/5 rounded-full blur-2xl group-hover:scale-125 transition-transform duration-700">
+          </div>
+        </div>
+        <!-- KPI Card 2 -->
+        <div class="bg-secondary-container modern-card rounded-xl p-card-padding" id="kpi-card-2">
+          <h4 class="text-label-md text-on-secondary-container/70 uppercase tracking-widest mb-3" id="kpi-label-2">FX
+            Reserves (Avg)</h4>
+          <div class="text-on-secondary-container text-4xl font-extrabold tracking-tight mb-4" id="kpi-value-2">
+            $422.5B</div>
+          <div class="flex items-center gap-1.5 text-on-secondary-container/60">
+            <span class="material-symbols-outlined text-[16px]">history</span>
+            <span class="text-[12px] font-medium" id="kpi-meta-2">Updated 24h ago</span>
+          </div>
+        </div>
+        <!-- KPI Card 3 -->
+        <div class="modern-card rounded-xl p-card-padding" id="kpi-card-3">
+          <div class="flex items-center gap-4 mb-4">
+            <div
+              class="w-10 h-10 rounded-lg bg-primary/5 flex items-center justify-center text-primary border border-primary/10">
+              <span class="material-symbols-outlined text-[24px] fill-current">verified</span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h4 class="text-label-md font-bold text-on-surface dark:text-white uppercase truncate" id="kpi-label-3">
+                Integrity Score</h4>
+              <p class="text-[12px] text-on-surface-variant truncate" id="kpi-meta-3">Institutional: 98.4%</p>
+            </div>
+          </div>
+          <div class="w-full bg-surface-container-high dark:bg-surface-variant/30 rounded-full h-1.5 overflow-hidden">
+            <div class="bg-primary h-full rounded-full transition-all duration-700" id="kpi-progress-3"
+              style="width: 98.4%"></div>
+          </div>
+        </div>
+        <!-- Mini Chart or Legend -->
+        <div class="modern-card rounded-xl p-4 flex-1">
+          <div class="text-label-md font-bold text-on-surface-variant uppercase tracking-widest mb-4">Regional
+            Status Index</div>
+          <div class="space-y-3">
+            <div class="flex justify-between items-center text-[12px]">
+              <span class="text-on-surface-variant flex items-center gap-2"><span
+                  class="w-2 h-2 rounded-full bg-emerald-500"></span> Stable</span>
+              <span class="font-bold">3 Regions</span>
+            </div>
+            <div class="flex justify-between items-center text-[12px]">
+              <span class="text-on-surface-variant flex items-center gap-2"><span
+                  class="w-2 h-2 rounded-full bg-amber-500"></span> Caution</span>
+              <span class="font-bold">1 Region</span>
+            </div>
+            <div class="flex justify-between items-center text-[12px]">
+              <span class="text-on-surface-variant flex items-center gap-2"><span
+                  class="w-2 h-2 rounded-full bg-blue-500"></span> Emerging</span>
+              <span class="font-bold">1 Region</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Macro Table (12 Columns) -->
+      <div class="col-span-12 modern-card rounded-xl overflow-hidden">
+        <div class="p-card-padding border-b border-outline-variant/30 flex justify-between items-center">
+          <div>
+            <h3 class="text-headline-sm text-on-surface dark:text-white">Matrix Macroenómica Regional PIB 2023</h3>
+            <p class="text-[13px] text-on-surface-variant mt-1">Inflation and Debt-to-GDP benchmarked by regional
+              clusters.</p>
+          </div>
+          <button
+            class="bg-surface-container-low dark:bg-surface-container text-primary dark:text-primary-fixed border border-outline-variant/20 px-4 py-2 rounded-lg text-label-md font-bold hover:bg-surface-container-high transition-all flex items-center gap-2">
+            <span class="material-symbols-outlined text-[18px]">download</span>
+            <span>CSV</span>
+          </button>
+        </div>
+        <div class="overflow-x-auto custom-scrollbar">
+          <table class="w-full text-left">
+            <thead>
+              <tr class="bg-surface-container-lowest dark:bg-inverse-surface border-b border-outline-variant/10">
+                <th
+                  class="px-card-padding py-4 text-[11px] text-on-surface-variant/70 uppercase tracking-widest font-black">
+                  Ranking</th>
+                <th
+                  class="px-card-padding py-4 text-[11px] text-on-surface-variant/70 uppercase tracking-widest font-black">
+                  REgião</th>
+                <th
+                  class="px-card-padding py-4 text-[11px] text-on-surface-variant/70 uppercase tracking-widest font-black text-right">
+                  Inflação Média (%)</th>
+                <th
+                  class="px-card-padding py-4 text-[11px] text-on-surface-variant/70 uppercase tracking-widest font-black text-right">
+                  Crescimento acumulado (%)</th>
+                <th
+                  class="px-card-padding py-4 text-[11px] text-on-surface-variant/70 uppercase tracking-widest font-black text-center">
+                  Status</th>
+                <th
+                  class="px-card-padding py-4 text-[11px] text-on-surface-variant/70 uppercase tracking-widest font-black">
+                  População Total</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-outline-variant/5">
+              @for (item of regionalList; track $index) {
+              <tr
+                class="hover:bg-surface-container-low dark:hover:bg-surface-container/50 cursor-pointer transition-colors"
+                (click)="regional.set('north')">
+
+                <td class="px-card-padding py-4 font-bold text-on-surface dark:text-white tabular-nums">
+                  {{item.Ranking_PIB_2023}}</td>
+
+                <td class="px-card-padding py-4">
+                  <div class="flex items-center gap-3">
+                    <div [class]="'w-2 h-8 rounded-full region-gradient-north'"></div>
+                    <div>
+                      <div class="font-bold text-on-surface dark:text-white">{{item.Regiao}}</div>
+                      <div class="text-[10px] text-on-surface-variant/60 font-black uppercase tracking-tighter">
+                        {{item.No_Paises}}
+                        Países</div>
+                    </div>
+                  </div>
+                </td>
+
+
+                <td class="px-card-padding py-4 text-right font-bold text-on-surface dark:text-white tabular-nums">
+                  {{item.Inflacao_Media}}%</td>
+                <td class="px-card-padding py-4 text-right font-bold text-on-surface dark:text-white tabular-nums">
+                  {{item.Crescimento_Acumulado_Regiao_pc}}%</td>
+                <td class="px-card-padding py-4 text-center">
+                  <span
+                    class="inline-flex items-center px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 text-[10px] font-black uppercase tracking-widest">Caution</span>
+                </td>
+                <td class="px-card-padding py-4 text-on-surface-variant text-[13px]">{{item.Pop_Total_Milhoes}} Milhões
+                </td>
+              </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
   </div>
-  <script>
-    const regionalData = {
-      'continental': {
-        label1: 'Total Continental GDP', value1: '$2.98T', trend1: '3.4% vs LY',
-        label2: 'FX Reserves (Avg)', value2: '$422.5B', meta2: 'Updated 24h ago',
-        label3: 'Integrity Score', meta3: 'Institutional: 98.4%', progress3: '98.4%',
-        spotlightTitle: 'Growth Acceleration in East Africa',
-        spotlightDesc: 'Kenya and Ethiopia drive regional growth of 6.2%, outpacing continental averages through digital diversification.'
-      },
-      'north': {
-        label1: 'North Africa GDP', value1: '$845.2B', trend1: '2.1% vs LY',
-        label2: 'Regional Inflation', value2: '12.4%', meta2: 'Commodity impact',
-        label3: 'Stability Index', meta3: 'Regional: 74.2%', progress3: '74.2%',
-        spotlightTitle: 'Tourism Recovery in Egypt',
-        spotlightDesc: 'The Egyptian economy shows resilience with a massive return of international tourism, projecting 4.5% sectoral GDP growth.'
-      },
-      'west': {
-        label1: 'West Africa GDP', value1: '$712.8B', trend1: '4.8% vs LY',
-        label2: 'Debt / GDP Avg', value2: '62.4%', meta2: 'Nigeria/Ghana lead',
-        label3: 'Stability Index', meta3: 'Regional: 82.1%', progress3: '82.1%',
-        spotlightTitle: 'Lagos Tech Hub Expansion',
-        spotlightDesc: 'Digital infrastructure investments in Nigeria are creating a new tech corridor attracting global venture capital.'
-      },
-      'east': {
-        label1: 'East Africa GDP', value1: '$425.1B', trend1: '6.2% vs LY',
-        label2: 'Agri Exports', value2: '$118.4B', meta2: 'Record Coffee/Tea',
-        label3: 'Stability Index', meta3: 'Regional: 89.5%', progress3: '89.5%',
-        spotlightTitle: 'Green Energy in Ethiopia',
-        spotlightDesc: 'Completion of new hydroelectric plants makes Ethiopia a net exporter of clean energy to the entire Eastern region.'
-      },
-      'south': {
-        label1: 'Southern Africa GDP', value1: '$690.4B', trend1: '1.9% vs LY',
-        label2: 'Industrial Capacity', value2: '78.5%', meta2: 'Mining & Tech focus',
-        label3: 'Stability Index', meta3: 'Regional: 85.0%', progress3: '85%',
-        spotlightTitle: 'SA Energy Transition',
-        spotlightDesc: 'New decarbonization policies are attracting billions in international subsidies for the green hydrogen sector.'
-      },
-      'central': {
-        label1: 'Central Africa GDP', value1: '$215.3B', trend1: '3.1% vs LY',
-        label2: 'Natural Resources', value2: '$92.1B', meta2: 'Mineral growth +5%',
-        label3: 'Stability Index', meta3: 'Regional: 68.8%', progress3: '68.8%',
-        spotlightTitle: 'Congo Basin Ecotourism',
-        spotlightDesc: 'New carbon credit projects are generating stable, sustainable revenue for the Congo basin nations.'
-      }
-    };
-
-    function selectRegion(regionId) {
-      // Update Map Visualization
-      const paths = document.querySelectorAll('.africa-map-path');
-      paths.forEach(p => {
-        p.classList.remove('active-north', 'active-west', 'active-east', 'active-south', 'active-central');
-      });
-
-      if (regionId !== 'continental') {
-        const activePath = document.getElementById(`region-${regionId}`);
-        if (activePath) activePath.classList.add(`active-${regionId}`);
-      }
-
-      // Update Data with Animation
-      const data = regionalData[regionId];
-      const elements = [
-        { id: 'kpi-label-1', text: data.label1 },
-        { id: 'kpi-value-1', text: data.value1 },
-        { id: 'kpi-trend-1', text: data.trend1 },
-        { id: 'kpi-label-2', text: data.label2 },
-        { id: 'kpi-value-2', text: data.value2 },
-        { id: 'kpi-meta-2', text: data.meta2 },
-        { id: 'kpi-label-3', text: data.label3 },
-        { id: 'kpi-meta-3', text: data.meta3 },
-        { id: 'spotlight-title', text: data.spotlightTitle },
-        { id: 'spotlight-desc', text: data.spotlightDesc }
-      ];
-
-      elements.forEach(el => {
-        const dom = document.getElementById(el.id);
-        if (dom) {
-          dom.classList.remove('animate-data-update');
-          void dom.offsetWidth; // Reflow
-          dom.innerText = el.text;
-          dom.classList.add('animate-data-update');
-        }
-      });
-
-      const progressBar = document.getElementById('kpi-progress-3');
-      if (progressBar) progressBar.style.width = data.progress3;
-    }
-
-    // Map Events
-    document.querySelectorAll('.africa-map-path').forEach(path => {
-      path.addEventListener('click', (e) => {
-        const regionId = e.target.id.replace('region-', '');
-        selectRegion(regionId);
-      });
-
-      path.addEventListener('mousemove', (e) => {
-        const tooltip = document.getElementById('map-tooltip');
-        const regionName = e.target.id.replace('region-', '').toUpperCase() + ' AFRICA';
-        tooltip.innerText = regionName;
-        tooltip.style.left = `${e.clientX - e.target.getBoundingClientRect().left + 20}px`;
-        tooltip.style.top = `${e.clientY - e.target.getBoundingClientRect().top - 10}px`;
-        tooltip.classList.remove('hidden');
-      });
-
-      path.addEventListener('mouseleave', () => {
-        document.getElementById('map-tooltip').classList.add('hidden');
-      });
-    });
-
-    document.getElementById('reset-map').addEventListener('click', () => selectRegion('continental'));
-
-    // Dark Mode Toggle
-    const toggleBtn = document.getElementById('dark-mode-toggle');
-    const knob = document.getElementById('theme-toggle-knob');
-    const icon = document.getElementById('theme-icon');
-
-    toggleBtn.addEventListener('click', () => {
-      const isDark = document.documentElement.classList.toggle('dark');
-      knob.style.transform = isDark ? 'translateX(100%)' : 'translateX(0)';
-      icon.innerText = isDark ? 'light_mode' : 'dark_mode';
-    });
-  </script>
-</body>
+</div>
