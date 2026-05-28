@@ -1,9 +1,10 @@
 import { Component, computed, signal } from '@angular/core';
 import { paises } from '../../services/country.json';
+import { Title } from '../../shared/components/title/title';
 
 @Component({
   selector: 'app-countries',
-  imports: [],
+  imports: [Title],
   templateUrl: './countries.html',
   styleUrl: './countries.css',
 })

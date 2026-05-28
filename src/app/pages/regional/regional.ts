@@ -1,9 +1,10 @@
 import { Component, computed, signal } from '@angular/core';
 import { Regioes } from '../../services/regionals.json';
+import { Title } from '../../shared/components/title/title';
 
 @Component({
   selector: 'app-regional',
-  imports: [],
+  imports: [Title],
   templateUrl: './regional.html',
   styleUrl: './regional.css',
 })
@@ -31,8 +32,6 @@ export class Regional {
     return {
       pibTotal: regionalDataSelected[`PIB_Total_${year}_Bi`],
     };
-
-    // console.log(regionalItem['Regiao'][this.regional()]);
   });
 
   onYearChange(event: Event) {
