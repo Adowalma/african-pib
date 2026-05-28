@@ -1,0 +1,12 @@
+<div class="flex gap-2">
+  <button class="p-2 bg-white dark:bg-inverse-surface shadow-sm rounded-md text-primary"
+    (click)="pageChange.emit(page() - 1)" [disabled]="page()=== 1">Prev</button>
+
+  @for(p of pages(); track p){
+  <button class="btn" (click)="pageChange.emit(p)" [class.active]="p === page()">{{p}}</button>
+  }
+
+  <button class="p-2 bg-white dark:bg-inverse-surface shadow-sm rounded-md text-primary"
+    (click)="pageChange.emit(page() + 1)" [disabled]="page()=== totalPage()">Next</button>
+
+</div>

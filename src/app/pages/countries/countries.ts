@@ -1,10 +1,11 @@
 import { Component, computed, signal } from '@angular/core';
 import { paises } from '../../services/country.json';
 import { Title } from '../../shared/components/title/title';
+import { Pagination } from '../../shared/components/pagination/pagination';
 
 @Component({
   selector: 'app-countries',
-  imports: [Title],
+  imports: [Title, Pagination],
   templateUrl: './countries.html',
   styleUrl: './countries.css',
 })
@@ -51,4 +52,16 @@ export class Countries {
     const selectElement = event.target as HTMLSelectElement;
     this.selectedYear.set(selectElement.value);
   }
+
+  page = signal(1);
+  pageSize = 6;
+
+  totalPages = computed(() => Math.ceil(this.selectedYearData().length / this.pageSize));
+
+  paginatedData = computed(() => {
+    const start = (this.page() - 1) * this.pageSize;
+    const end = start + this.pageSize;
+
+    return this.selectedYearData().slice(start, end);
+  });
 }

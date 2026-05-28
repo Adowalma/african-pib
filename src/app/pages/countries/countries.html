@@ -97,7 +97,7 @@
         </div>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        @for (item of selectedYearData(); track $index) {
+        @for (item of paginatedData(); track $index) {
         <div class="bg-white dark:bg-inverse-surface rounded-xl border border-outline-variant/20 p-5 kpi-card group">
           <div class="flex justify-between mb-4">
             <div class="flex items-center gap-3">
@@ -130,6 +130,7 @@
           </div>
         </div>
         }
+        <app-pagination [page]="page()" [totalPage]="totalPages()" (pageChange)="page.set($event)"></app-pagination>
       </div>
       <!-- Growth Chart Area -->
       <div class="bg-white dark:bg-inverse-surface rounded-xl border border-outline-variant/20 p-6">
