@@ -2,8 +2,8 @@
   <div class="w-full mx-auto space-y-gutter">
     <!-- Dashboard Titles -->
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
-      <app-title title="Análise Regional Africana" subTitle="Real-time
-          macroeconomic reporting for Q4 2024 performance clusters."></app-title>
+      <app-title title="Análise Regional Africana"
+        subTitle="Análise comparativa do desempenho económico das regiões africanas entre 2000 e 2023."></app-title>
       <div class="flex gap-2">
         <button
           class="flex items-center gap-2 bg-white dark:bg-surface-container border border-outline-variant/30 px-4 py-2 rounded-lg text-label-md font-bold hover:bg-surface-container transition-all shadow-sm">
@@ -24,14 +24,14 @@
       <div class="col-span-12 xl:col-span-8 modern-card rounded-xl p-card-padding flex flex-col min-h-125">
         <div class="flex justify-between items-center mb-8">
           <div>
-            <h3 class="text-headline-sm text-on-surface dark:text-white">Geographic Region Selector</h3>
-            <p class="text-body-md text-on-surface-variant">Click map region to isolate local KPIs</p>
+            <h3 class="text-headline-sm text-on-surface dark:text-white">Seletor de região geográfica</h3>
+            <p class="text-body-md text-on-surface-variant">Clique na região do mapa para isolar os KPIs locais</p>
           </div>
           <button
             class="text-primary dark:text-primary-fixed text-label-md font-black flex items-center gap-1 hover:opacity-70 transition-opacity"
             id="reset-map">
             <span class="material-symbols-outlined text-[18px]" (click)="regional.set('Continental')">refresh</span>
-            RESET
+            Reiniciar
           </button>
         </div>
         <div class="flex-1 flex items-center justify-center relative">
@@ -104,8 +104,8 @@
             </div>
             <div class="flex-1 min-w-0">
               <h4 class="text-label-md font-bold text-on-surface dark:text-white uppercase truncate" id="kpi-label-3">
-                Integrity Score</h4>
-              <p class="text-[12px] text-on-surface-variant truncate" id="kpi-meta-3">Institutional: 98.4%</p>
+                Nível de integridade dos dados</h4>
+              <p class="text-[12px] text-on-surface-variant truncate" id="kpi-meta-3">Institucional: 98.4%</p>
             </div>
           </div>
           <div class="w-full bg-surface-container-high dark:bg-surface-variant/30 rounded-full h-1.5 overflow-hidden">
@@ -115,23 +115,23 @@
         </div>
         <!-- Mini Chart or Legend -->
         <div class="modern-card rounded-xl p-4 flex-1">
-          <div class="text-label-md font-bold text-on-surface-variant uppercase tracking-widest mb-4">Regional
-            Status Index</div>
+          <div class="text-label-md font-bold text-on-surface-variant uppercase tracking-widest mb-4">Índice de
+            Desempenho Regional</div>
           <div class="space-y-3">
             <div class="flex justify-between items-center text-[12px]">
               <span class="text-on-surface-variant flex items-center gap-2"><span
-                  class="w-2 h-2 rounded-full bg-emerald-500"></span> Stable</span>
-              <span class="font-bold">3 Regions</span>
+                  class="w-2 h-2 rounded-full bg-emerald-500"></span> Estável</span>
+              <span class="font-bold">3 Regiões</span>
             </div>
             <div class="flex justify-between items-center text-[12px]">
               <span class="text-on-surface-variant flex items-center gap-2"><span
                   class="w-2 h-2 rounded-full bg-amber-500"></span> Caution</span>
-              <span class="font-bold">1 Region</span>
+              <span class="font-bold">1 Região</span>
             </div>
             <div class="flex justify-between items-center text-[12px]">
               <span class="text-on-surface-variant flex items-center gap-2"><span
                   class="w-2 h-2 rounded-full bg-blue-500"></span> Emerging</span>
-              <span class="font-bold">1 Region</span>
+              <span class="font-bold">1 Região</span>
             </div>
           </div>
         </div>
@@ -141,8 +141,8 @@
         <div class="p-card-padding border-b border-outline-variant/30 flex justify-between items-center">
           <div>
             <h3 class="text-headline-sm text-on-surface dark:text-white">Matrix Macroenómica Regional PIB 2023</h3>
-            <p class="text-[13px] text-on-surface-variant mt-1">Inflation and Debt-to-GDP benchmarked by regional
-              clusters.</p>
+            <p class="text-[13px] text-on-surface-variant mt-1">Inflação e relação dívida/PIB comparadas por
+              agrupamentos regionais.</p>
           </div>
           <button
             class="bg-surface-container-low dark:bg-surface-container text-primary dark:text-primary-fixed border border-outline-variant/20 px-4 py-2 rounded-lg text-label-md font-bold hover:bg-surface-container-high transition-all flex items-center gap-2">
