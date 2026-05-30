@@ -1,3 +1,23 @@
+@if (extendedStyle()) {
+<div
+  class="bg-surface-container-low dark:bg-surface-container-lowest px-6 py-4 flex justify-between items-center border-t border-outline-variant">
+  <p class="text-sm font-medium text-on-surface-variant">Showing {{start()}}-{{end()}} de {{totalPage()}} indicators</p>
+  <div class="flex gap-2">
+    <button
+      class="px-3 py-1.5 border border-outline-variant/40 rounded-lg hover:bg-surface-container dark:hover:bg-outline-variant/10 transition-colors disabled:opacity-40"
+      (click)="pageChange.emit(page() - 1)" [disabled]="page()=== 1">
+      <span class="material-symbols-outlined text-sm">chevron_left</span>
+    </button>
+    <button
+      class="px-3 py-1.5 border border-outline-variant/40 rounded-lg hover:bg-surface-container dark:hover:bg-outline-variant/10 transition-colors disabled:opacity-40"
+      (click)="pageChange.emit(page() + 1)" [disabled]="page() === totalPage()">
+      <span class="material-symbols-outlined text-sm">chevron_right</span>
+    </button>
+  </div>
+</div>
+}
+
+@else {
 <div class="flex gap-2">
   <button class="p-2 bg-white dark:bg-inverse-surface shadow-sm rounded-md text-primary"
     (click)="pageChange.emit(page() - 1)" [disabled]="page()=== 1">Prev</button>
@@ -8,5 +28,5 @@
 
   <button class="p-2 bg-white dark:bg-inverse-surface shadow-sm rounded-md text-primary"
     (click)="pageChange.emit(page() + 1)" [disabled]="page()=== totalPage()">Next</button>
-
 </div>
+}

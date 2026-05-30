@@ -1,106 +1,10 @@
 <div class="p-8 grid grid-cols-12 gap-6 w-full mx-auto">
-  <!-- Dashboard Header (Span 12) -->
-  <div class="col-span-12 flex flex-col md:flex-row md:items-end justify-between gap-4 mb-2">
+  <!-- <app-kpi class="col-span-12"></app-kpi> -->
 
-    <app-title title=" Regional Insights" subTitle="Continental Performance Overview"></app-title>
-
-    <div class="flex gap-2">
-      <div class="flex bg-surface-container p-1 rounded-lg border border-outline-variant/40">
-        <button
-          class="px-4 py-1.5 bg-surface-container-lowest dark:bg-primary-container/20 dark:text-primary-fixed shadow-sm rounded text-label-md font-bold text-primary">2024
-          (Forecast)</button>
-        <button
-          class="px-4 py-1.5 text-on-surface-variant text-label-md font-medium hover:text-on-surface transition-colors">2023</button>
-        <button
-          class="px-4 py-1.5 text-on-surface-variant text-label-md font-medium hover:text-on-surface transition-colors">Historical</button>
-      </div>
-      <button
-        class="px-3 py-1.5 bg-surface-container rounded-lg border border-outline-variant/40 flex items-center gap-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors">
-        <span class="material-symbols-outlined text-sm">tune</span>
-        <span class="text-label-md font-medium">Filters</span>
-      </button>
-    </div>
-  </div>
-
-  <app-kpi class="col-span-12"></app-kpi>
-
-  <!-- Economics Simplified (Span 12) -->
-  <div class="col-span-12 mt-4">
-    <h3 class="text-headline-sm font-bold text-on-surface mb-6 flex items-center gap-2">
-      <span class="material-symbols-outlined text-primary dark:text-primary-fixed">lightbulb</span>
-      Economics Simplified
-    </h3>
-    <div class="grid grid-cols-12 gap-6">
-      <!-- GDP vs PPP (Span 6) -->
-      <div
-        class="col-span-12 lg:col-span-6 bg-surface-container-lowest rounded-2xl p-8 border border-outline-variant/40 flex flex-col justify-between relative group overflow-hidden shadow-sm">
-        <div
-          class="absolute top-0 right-0 p-8 text-surface-container-high dark:text-surface-container transition-transform group-hover:scale-110 opacity-50">
-          <span class="material-symbols-outlined text-[100px]"
-            style="font-variation-settings: 'FILL' 1;">payments</span>
-        </div>
-        <div class="relative z-10">
-          <div class="w-12 h-12 bg-secondary-container rounded-xl flex items-center justify-center mb-6">
-            <span class="material-symbols-outlined text-on-secondary-container">show_chart</span>
-          </div>
-          <h4 class="text-headline-md font-bold text-on-surface mb-3">GDP vs. PPP</h4>
-          <p class="text-body-md text-on-surface-variant max-w-md leading-relaxed">
-            Imagine GDP as the amount of cash in your pocket, while PPP (Purchasing Power Parity) is how many
-            loaves of bread that cash actually buys in your local market.
-          </p>
-        </div>
-        <button
-          class="mt-8 w-fit flex items-center gap-2 text-primary dark:text-primary-fixed font-bold hover:gap-4 transition-all group/btn relative z-10">
-          Learn about purchasing power
-          <span
-            class="material-symbols-outlined group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
-        </button>
-      </div>
-      <!-- Mini Bento (Span 6) -->
-      <div class="col-span-12 lg:col-span-6 grid grid-cols-2 gap-6">
-        <div
-          class="bg-tertiary dark:bg-tertiary-container text-on-tertiary dark:text-on-tertiary-container rounded-2xl p-6 flex flex-col justify-between shadow-sm">
-          <div>
-            <h4 class="text-headline-sm font-bold">Trade Balance</h4>
-            <p class="text-sm opacity-80 mt-2">When exports exceed imports, the balance tilts in favor of national
-              surplus.</p>
-          </div>
-          <div class="mt-4 flex justify-end">
-            <span class="material-symbols-outlined text-4xl opacity-50">balance</span>
-          </div>
-        </div>
-        <div
-          class="bg-surface-container-highest dark:bg-surface-container rounded-2xl p-6 flex flex-col justify-between border border-outline-variant/40 hover:bg-surface-container-high dark:hover:bg-outline-variant/10 transition-colors shadow-sm">
-          <div>
-            <h4 class="text-headline-sm font-bold text-primary dark:text-primary-fixed">Debt Ratio</h4>
-            <p class="text-sm text-on-surface-variant mt-2">Sustainable credit relative to output. Healthy ratios
-              drive future investment capability.</p>
-          </div>
-          <div class="mt-4 flex justify-end">
-            <span class="material-symbols-outlined text-4xl text-outline opacity-40">credit_card</span>
-          </div>
-        </div>
-        <div
-          class="col-span-2 bg-secondary-container rounded-2xl p-6 flex items-center gap-6 border border-secondary/40 shadow-sm">
-          <div class="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center shrink-0">
-            <span class="material-symbols-outlined text-4xl text-on-secondary-container">account_balance_wallet</span>
-          </div>
-          <div>
-            <h4 class="text-headline-sm font-bold text-on-secondary-container">Fiscal Policy</h4>
-            <p class="text-body-md text-on-secondary-container opacity-90">Framework for government revenue
-              collection and expenditure to steer growth.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
   <!-- Technical Dictionary (Span 12) -->
   <div class="col-span-12 mt-4">
     <div class="flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
-      <h3 class="text-headline-sm font-bold text-on-surface flex items-center gap-2 self-start">
-        <span class="material-symbols-outlined text-primary dark:text-primary-fixed">menu_book</span>
-        Technical Dictionary
-      </h3>
+      <app-title title="Dicionário Técnico" subTitle="Explicação dos termos técnicos usados"></app-title>
       <div class="w-full md:w-96 relative">
         <span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline">search</span>
         <input
@@ -121,7 +25,7 @@
             </tr>
           </thead>
           <tbody class="divide-y divide-outline-variant/30">
-            @for (item of dictionaryData; track $index) {
+            @for (item of paginatedData(); track $index) {
             <tr
               class="zebra-row hover:bg-surface-container/50 dark:hover:bg-white/5 transition-colors cursor-pointer group">
               <!-- <td class="px-6 py-4 font-label-md text-primary dark:text-primary-fixed font-bold"></td> -->
@@ -143,21 +47,8 @@
           </tbody>
         </table>
       </div>
-      <div
-        class="bg-surface-container-low dark:bg-surface-container-lowest px-6 py-4 flex justify-between items-center border-t border-outline-variant">
-        <p class="text-sm font-medium text-on-surface-variant">Showing 1-4 of 128 indicators</p>
-        <div class="flex gap-2">
-          <button
-            class="px-3 py-1.5 border border-outline-variant/40 rounded-lg hover:bg-surface-container dark:hover:bg-outline-variant/10 transition-colors disabled:opacity-40"
-            disabled="">
-            <span class="material-symbols-outlined text-sm">chevron_left</span>
-          </button>
-          <button
-            class="px-3 py-1.5 border border-outline-variant/40 rounded-lg hover:bg-surface-container dark:hover:bg-outline-variant/10 transition-colors">
-            <span class="material-symbols-outlined text-sm">chevron_right</span>
-          </button>
-        </div>
-      </div>
+      <app-pagination [extendedStyle]="true" [totalPage]="totalPages()" [page]="page()" (pageChange)="page.set($event)"
+        [end]="end" [start]="start + 1"></app-pagination>
     </div>
   </div>
 </div>

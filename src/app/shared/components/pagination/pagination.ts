@@ -7,8 +7,12 @@ import { Component, input, output } from '@angular/core';
   styleUrl: './pagination.css',
 })
 export class Pagination {
+  extendedStyle = input(false);
   page = input(1);
   totalPage = input(1);
+
+  start = input<number>();
+  end = input<number>();
 
   pageChange = output<number>();
 
