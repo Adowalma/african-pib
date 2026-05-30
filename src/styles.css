@@ -80,8 +80,13 @@ body {
   color: #3f4849;
 }
 
+.dark .sidebar-link.active {
+  background-color: color-mix(in oklab, #8ed2d7 15%, transparent);
+  color: #8ed2d7;
+}
+
 .dark .sidebar-link:not(.active) {
-  color: #bec8c9;
+  color: #a1a1aa;
 }
 
 

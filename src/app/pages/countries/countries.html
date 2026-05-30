@@ -1,5 +1,4 @@
-<div class="p-8 mx-auto w-full">
-  <!-- Hero Section -->
+<div class="p-8 mx-auto w-full dark:text-zinc-100">
   <div class="mb-8 flex flex-col lg:flex-row lg:items-end justify-between gap-6">
 
     <app-title title="Relatório de Crescimento Africano" subTitle="Análise multidimensional do desempenho macroeconómico entre
@@ -7,104 +6,110 @@
 
     <div class="flex items-center gap-3">
       <div
-        class="bg-white dark:bg-inverse-surface shadow-sm border border-outline-variant/40 rounded-xl px-4 py-2 flex items-center gap-3">
-        <span class="text-[11px] font-bold text-on-surface-variant uppercase">Periodo</span>
-        <div class="h-4 w-px] bg-outline-variant"></div>
+        class="bg-white dark:bg-zinc-800 shadow-sm border border-outline-variant/40 dark:border-zinc-700 rounded-xl px-4 py-2 flex items-center gap-3">
+        <span class="text-[11px] font-bold text-on-surface-variant dark:text-zinc-400 uppercase">Periodo</span>
+        <div class="h-4 w-px bg-outline-variant dark:bg-zinc-700"></div>
         <select
           class="bg-transparent border-none text-sm font-bold text-primary dark:text-primary-fixed focus:ring-0 cursor-pointer p-0 pr-6"
           [value]='selectedYear()' (change)="onYearChange($event)">
           @for (year of years; track $index) {
-          <option [value]="year">{{year}}</option>
+          <option [value]="year" class="dark:bg-zinc-800 dark:text-zinc-100">{{year}}</option>
           }
         </select>
       </div>
       <button
-        class="px-4 py-2 rounded-xl bg-white dark:bg-inverse-surface border border-outline-variant/40 font-bold text-sm flex items-center gap-2 hover:bg-surface-container-high transition-all">
+        class="px-4 py-2 rounded-xl bg-white dark:bg-zinc-800 border border-outline-variant/40 dark:border-zinc-700 font-bold text-sm flex items-center gap-2 hover:bg-surface-container-high dark:hover:bg-zinc-700 text-on-surface dark:text-zinc-200 transition-all">
         <span class="material-symbols-outlined text-[18px]">tune</span>
         Filtros
       </button>
     </div>
   </div>
-  <!-- KPI Row: 12-column grid -->
   <div class="grid grid-cols-12 gap-gutter mb-8">
     <div
-      class="col-span-12 md:col-span-6 lg:col-span-3 bg-white dark:bg-inverse-surface p-card-padding rounded-xl kpi-card border border-outline-variant/20">
+      class="col-span-12 md:col-span-6 lg:col-span-3 bg-white dark:bg-zinc-800 p-card-padding rounded-xl kpi-card border border-outline-variant/20 dark:border-zinc-700/50">
       <div class="flex justify-between items-start mb-4">
-        <span class="text-label-md font-bold text-on-surface-variant uppercase tracking-wider">PIB
+        <span class="text-label-md font-bold text-on-surface-variant dark:text-zinc-400 uppercase tracking-wider">PIB
           Continental</span>
         <span class="material-symbols-outlined text-primary">public</span>
       </div>
       <div class="flex items-baseline gap-2">
-        <h3 class="text-data-numeric font-bold">$3.1T</h3>
+        <h3 class="text-data-numeric font-bold text-on-surface dark:text-zinc-100">$3.1T</h3>
         <span class="text-primary text-[12px] font-bold flex items-center">
           <span class="material-symbols-outlined text-[14px]!">trending_up</span> 4.2%
         </span>
       </div>
-      <p class="text-[11px] text-on-surface-variant mt-1 opacity-70">Previsão anual vs 2022</p>
+      <p class="text-[11px] text-on-surface-variant dark:text-zinc-400 mt-1 opacity-70">Previsão anual vs 2022</p>
     </div>
     <div
-      class="col-span-12 md:col-span-6 lg:col-span-3 bg-white dark:bg-inverse-surface p-card-padding rounded-xl kpi-card border border-outline-variant/20">
+      class="col-span-12 md:col-span-6 lg:col-span-3 bg-white dark:bg-zinc-800 p-card-padding rounded-xl kpi-card border border-outline-variant/20 dark:border-zinc-700/50">
       <div class="flex justify-between items-start mb-4">
-        <span class="text-label-md font-bold text-on-surface-variant uppercase tracking-wider">Média de
+        <span class="text-label-md font-bold text-on-surface-variant dark:text-zinc-400 uppercase tracking-wider">Média
+          de
           Cresc.</span>
         <span class="material-symbols-outlined text-secondary">insights</span>
       </div>
       <div class="flex items-baseline gap-2">
-        <h3 class="text-data-numeric font-bold">3.8%</h3>
+        <h3 class="text-data-numeric font-bold text-on-surface dark:text-zinc-100">3.8%</h3>
         <span class="text-error text-[12px] font-bold flex items-center">
           <span class="material-symbols-outlined text-[14px]!">trending_down</span> 0.5%
         </span>
       </div>
-      <p class="text-[11px] text-on-surface-variant mt-1 opacity-70">Abaixo da meta de 4.3%</p>
+      <p class="text-[11px] text-on-surface-variant dark:text-zinc-400 mt-1 opacity-70">Abaixo da meta de 4.3%</p>
     </div>
     <div
-      class="col-span-12 md:col-span-6 lg:col-span-3 bg-white dark:bg-inverse-surface p-card-padding rounded-xl kpi-card border border-outline-variant/20">
+      class="col-span-12 md:col-span-6 lg:col-span-3 bg-white dark:bg-zinc-800 p-card-padding rounded-xl kpi-card border border-outline-variant/20 dark:border-zinc-700/50">
       <div class="flex justify-between items-start mb-4">
-        <span class="text-label-md font-bold text-on-surface-variant uppercase tracking-wider">Top Nação</span>
+        <span class="text-label-md font-bold text-on-surface-variant dark:text-zinc-400 uppercase tracking-wider">Top
+          Nação</span>
         <span class="material-symbols-outlined text-primary">workspace_premium</span>
       </div>
       <div class="flex items-baseline gap-2">
-        <h3 class="text-data-numeric font-bold">Nigéria</h3>
+        <h3 class="text-data-numeric font-bold text-on-surface dark:text-zinc-100">Nigéria</h3>
       </div>
       <p class="text-[12px] font-bold text-primary mt-1">$477.3B Nominal</p>
     </div>
     <div
-      class="col-span-12 md:col-span-6 lg:col-span-3 bg-white dark:bg-inverse-surface p-card-padding rounded-xl kpi-card border border-outline-variant/20">
+      class="col-span-12 md:col-span-6 lg:col-span-3 bg-white dark:bg-zinc-800 p-card-padding rounded-xl kpi-card border border-outline-variant/20 dark:border-zinc-700/50">
       <div class="flex justify-between items-start mb-4">
-        <span class="text-label-md font-bold text-on-surface-variant uppercase tracking-wider">Era Atual</span>
+        <span class="text-label-md font-bold text-on-surface-variant dark:text-zinc-400 uppercase tracking-wider">Era
+          Atual</span>
         <span class="material-symbols-outlined text-tertiary">history_toggle_off</span>
       </div>
       <div class="flex items-baseline gap-2">
-        <h3 class="text-data-numeric font-bold">Digital Hub</h3>
+        <h3 class="text-data-numeric font-bold text-on-surface dark:text-zinc-100">Digital Hub</h3>
       </div>
       <p class="text-[12px] font-bold text-tertiary mt-1">Transição 2020-2023</p>
     </div>
   </div>
-  <!-- Main Content Grid -->
   <div class="grid grid-cols-12 gap-gutter">
-    <!-- Left: Country List (8 cols) -->
     <div class="col-span-12 lg:col-span-8 space-y-6">
       <div class="flex items-center justify-between">
-        <h4 class="text-headline-md font-bold flex items-center gap-2">
-          <!-- <span class="material-symbols-outlined text-primary">leaderboard</span> -->
+        <h4 class="text-headline-md font-bold flex items-center gap-2 text-on-surface dark:text-zinc-100">
           Performance por Nação
         </h4>
-        <div class="flex gap-2 bg-surface-container-low dark:bg-surface-variant/10 p-1 rounded-lg">
-          <button class="p-2 bg-white dark:bg-inverse-surface shadow-sm rounded-md text-primary"><span
-              class="material-symbols-outlined text-[20px]">grid_view</span></button>
-          <button class="p-2 rounded-md text-on-surface-variant"><span
-              class="material-symbols-outlined text-[20px]">list</span></button>
+        <div
+          class="flex gap-2 bg-surface-container-low dark:bg-zinc-900 p-1 rounded-lg border border-transparent dark:border-zinc-800 transition-colors duration-300">
+          <button
+            class="p-2 bg-white dark:bg-zinc-800 shadow-sm rounded-md text-primary dark:text-zinc-100 border border-transparent dark:border-zinc-700 transition-all active:scale-95">
+            <span class="material-symbols-outlined text-[20px] block">grid_view</span>
+          </button>
+
+          <button
+            class="p-2 rounded-md text-on-surface-variant dark:text-zinc-400 hover:bg-surface-container-high dark:hover:bg-zinc-800/50 transition-all active:scale-95">
+            <span class="material-symbols-outlined text-[20px] block">list</span>
+          </button>
         </div>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         @for (item of paginatedData(); track $index) {
-        <div class="bg-white dark:bg-inverse-surface rounded-xl border border-outline-variant/20 p-5 kpi-card group">
+        <div
+          class="bg-white dark:bg-zinc-800 rounded-xl border border-outline-variant/20 dark:border-zinc-700/50 p-5 kpi-card group">
           <div class="flex justify-between mb-4">
             <div class="flex items-center gap-3">
 
               <img [alt]="'Bandeira de '+ item.country" class="w-8 h-5 rounded-sm object-cover"
                 [src]="'https://flagcdn.com/'+ item.code.toLowerCase().substring(0,2) +'.svg'" />
-              <span class="font-bold">{{item.country}}</span>
+              <span class="font-bold text-on-surface dark:text-zinc-100">{{item.country}}</span>
             </div>
             <button
               class="p-2 rounded-full hover:bg-primary/10 dark:hover:bg-primary-fixed/10 text-primary dark:text-primary-fixed transition-colors">
@@ -113,11 +118,13 @@
           </div>
           <div class="grid grid-cols-2 gap-4 mb-4">
             <div>
-              <span class="text-[11px] text-on-surface-variant uppercase block mb-1">PIB Nominal</span>
-              <span class="font-bold text-sm">${{item.pib}}B</span>
+              <span class="text-[11px] text-on-surface-variant dark:text-zinc-400 uppercase block mb-1">PIB
+                Nominal</span>
+              <span class="font-bold text-sm text-on-surface dark:text-zinc-200">${{item.pib}}B</span>
             </div>
             <div>
-              <span class="text-[11px] text-on-surface-variant uppercase block mb-1">Crescimento</span>
+              <span
+                class="text-[11px] text-on-surface-variant dark:text-zinc-400 uppercase block mb-1">Crescimento</span>
               <span class="font-bold text-sm text-primary">{{item.pibGrow}}%</span>
             </div>
           </div>
@@ -132,25 +139,25 @@
         }
         <app-pagination [page]="page()" [totalPage]="totalPages()" (pageChange)="page.set($event)"></app-pagination>
       </div>
-      <!-- Growth Chart Area -->
-      <div class="bg-white dark:bg-inverse-surface rounded-xl border border-outline-variant/20 p-6">
+      <div class="bg-white dark:bg-zinc-800 rounded-xl border border-outline-variant/20 dark:border-zinc-700/50 p-6">
         <div class="flex justify-between items-center mb-10">
-          <h5 class="text-headline-sm font-bold">Histórico de Crescimento por Era</h5>
+          <h5 class="text-headline-sm font-bold text-on-surface dark:text-zinc-100">Histórico de Crescimento por Era
+          </h5>
           <div class="flex gap-4">
-            <div class="flex items-center gap-2 text-[11px] font-bold"><span
+            <div class="flex items-center gap-2 text-[11px] font-bold text-on-surface dark:text-zinc-200"><span
                 class="w-3 h-3 rounded-full bg-primary"></span> Atual</div>
-            <div class="flex items-center gap-2 text-[11px] font-bold"><span
+            <div class="flex items-center gap-2 text-[11px] font-bold text-on-surface dark:text-zinc-200"><span
                 class="w-3 h-3 rounded-full bg-secondary"></span> Média</div>
           </div>
         </div>
         <div class="h-64 flex items-end justify-between gap-6 px-4">
           <div class="flex-1 flex flex-col items-center gap-3">
-            <div class="w-full bg-surface-container-low dark:bg-surface-variant/20 rounded-t-lg relative group h-[45%]">
+            <div class="w-full bg-surface-container-low dark:bg-zinc-700/50 rounded-t-lg relative group h-[45%]">
               <div
                 class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity rounded-t-lg">
               </div>
             </div>
-            <span class="text-[10px] font-bold uppercase opacity-60">Pré-Ref.</span>
+            <span class="text-[10px] font-bold uppercase opacity-60 text-on-surface dark:text-zinc-400">Pré-Ref.</span>
           </div>
           <div class="flex-1 flex flex-col items-center gap-3">
             <div class="w-full bg-secondary/20 rounded-t-lg relative group h-[85%]">
@@ -158,25 +165,25 @@
                 class="absolute inset-0 bg-secondary/40 opacity-0 group-hover:opacity-100 transition-opacity rounded-t-lg">
               </div>
             </div>
-            <span class="text-[10px] font-bold uppercase opacity-60">Boom</span>
+            <span class="text-[10px] font-bold uppercase opacity-60 text-on-surface dark:text-zinc-400">Boom</span>
           </div>
           <div class="flex-1 flex flex-col items-center gap-3">
             <div class="w-full bg-primary/40 rounded-t-lg relative group h-[65%]"></div>
-            <span class="text-[10px] font-bold uppercase opacity-60">Resiliência</span>
+            <span
+              class="text-[10px] font-bold uppercase opacity-60 text-on-surface dark:text-zinc-400">Resiliência</span>
           </div>
           <div class="flex-1 flex flex-col items-center gap-3">
             <div class="w-full premium-gradient rounded-t-lg relative group h-[75%]"></div>
-            <span class="text-[10px] font-bold uppercase opacity-60">Digital</span>
+            <span class="text-[10px] font-bold uppercase opacity-60 text-on-surface dark:text-zinc-400">Digital</span>
           </div>
         </div>
       </div>
     </div>
-    <!-- Right: Insights & Map (4 cols) -->
     <div class="col-span-12 lg:col-span-4 space-y-6">
-      <!-- Mini Map Widget -->
       <div
-        class="bg-white dark:bg-inverse-surface rounded-xl border border-outline-variant/20 p-6 flex flex-col items-center">
-        <h5 class="text-sm font-bold text-on-surface-variant uppercase mb-6 self-start">Distribuição Geográfica</h5>
+        class="bg-white dark:bg-zinc-800 rounded-xl border border-outline-variant/20 dark:border-zinc-700/50 p-6 flex flex-col items-center">
+        <h5 class="text-sm font-bold text-on-surface-variant dark:text-zinc-400 uppercase mb-6 self-start">Distribuição
+          Geográfica</h5>
         <div class="w-full h-48 mb-6">
           <svg class="mini-map-svg" viewbox="0 0 100 100">
             <path
@@ -189,18 +196,19 @@
         </div>
         <div class="w-full space-y-3">
           <div class="flex justify-between items-center text-sm">
-            <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-primary"></span> Oeste
+            <span class="flex items-center gap-2 text-on-surface dark:text-zinc-200"><span
+                class="w-2 h-2 rounded-full bg-primary"></span> Oeste
               Africano</span>
-            <span class="font-bold">42% Vol.</span>
+            <span class="font-bold text-on-surface dark:text-zinc-100">42% Vol.</span>
           </div>
           <div class="flex justify-between items-center text-sm">
-            <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-secondary"></span> Norte
+            <span class="flex items-center gap-2 text-on-surface dark:text-zinc-200"><span
+                class="w-2 h-2 rounded-full bg-secondary"></span> Norte
               Africano</span>
-            <span class="font-bold">28% Vol.</span>
+            <span class="font-bold text-on-surface dark:text-zinc-100">28% Vol.</span>
           </div>
         </div>
       </div>
-      <!-- Insights List -->
       <div class="premium-gradient text-on-primary rounded-xl p-6 shadow-xl">
         <h5 class="text-sm font-bold uppercase tracking-widest mb-6 flex items-center gap-2">
           <span class="material-symbols-outlined text-[20px]">lightbulb</span>

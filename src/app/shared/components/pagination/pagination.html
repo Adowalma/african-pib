@@ -1,16 +1,17 @@
 @if (extendedStyle()) {
 <div
-  class="bg-surface-container-low dark:bg-surface-container-lowest px-6 py-4 flex justify-between items-center border-t border-outline-variant">
-  <p class="text-sm font-medium text-on-surface-variant">Mostrando {{start()}}-{{end()}} de {{totalPage()}} indicadores
+  class="bg-surface-container-low dark:bg-zinc-900/50 px-6 py-4 flex justify-between items-center border-t border-outline-variant dark:border-zinc-800 transition-colors duration-300">
+  <p class="text-sm font-medium text-on-surface-variant dark:text-zinc-400">
+    Mostrando {{start()}}-{{end()}} de {{totalPage()}} indicadores
   </p>
   <div class="flex gap-2">
     <button
-      class="px-3 py-1.5 border border-outline-variant/40 rounded-lg hover:bg-surface-container dark:hover:bg-outline-variant/10 transition-colors disabled:opacity-40"
-      (click)="pageChange.emit(page() - 1)" [disabled]="page()=== 1">
+      class="px-3 py-1.5 border border-outline-variant/40 dark:border-zinc-700 rounded-lg hover:bg-surface-container dark:hover:bg-zinc-800 text-on-surface dark:text-zinc-300 transition-colors disabled:opacity-40"
+      (click)="pageChange.emit(page() - 1)" [disabled]="page() === 1">
       <span class="material-symbols-outlined text-sm">chevron_left</span>
     </button>
     <button
-      class="px-3 py-1.5 border border-outline-variant/40 rounded-lg hover:bg-surface-container dark:hover:bg-outline-variant/10 transition-colors disabled:opacity-40"
+      class="px-3 py-1.5 border border-outline-variant/40 dark:border-zinc-700 rounded-lg hover:bg-surface-container dark:hover:bg-zinc-800 text-on-surface dark:text-zinc-300 transition-colors disabled:opacity-40"
       (click)="pageChange.emit(page() + 1)" [disabled]="page() === totalPage()">
       <span class="material-symbols-outlined text-sm">chevron_right</span>
     </button>
@@ -19,15 +20,27 @@
 }
 
 @else {
-<div class="flex gap-2">
-  <button class="p-2 bg-white dark:bg-inverse-surface shadow-sm rounded-md text-primary"
-    (click)="pageChange.emit(page() - 1)" [disabled]="page()=== 1">Prev</button>
+<div class="flex items-center gap-2 transition-colors duration-300">
+  <button
+    class="p-2 px-3 bg-white dark:bg-zinc-800 shadow-sm rounded-md text-primary dark:text-zinc-200 border border-transparent dark:border-zinc-700 hover:bg-zinc-50 dark:hover:bg-zinc-700/50 transition-colors disabled:opacity-40 text-sm font-medium"
+    (click)="pageChange.emit(page() - 1)" [disabled]="page() === 1">
+    Prev
+  </button>
 
-  @for(p of pages(); track p){
-  <button class="btn" (click)="pageChange.emit(p)" [class.active]="p === page()">{{p}}</button>
+  @for (p of pages(); track p) {
+  <button
+    class="px-3 py-2 text-sm font-medium rounded-md transition-all border border-transparent
+           bg-surface-container-low dark:bg-zinc-800/40 text-on-surface dark:text-zinc-300 hover:bg-surface-container dark:hover:bg-zinc-700
+           [&.active]:bg-primary [&.active]:text-white dark:[&.active]:bg-zinc-100 dark:[&.active]:text-zinc-900 dark:[&.active]:font-bold"
+    (click)="pageChange.emit(p)" [class.active]="p === page()">
+    {{p}}
+  </button>
   }
 
-  <button class="p-2 bg-white dark:bg-inverse-surface shadow-sm rounded-md text-primary"
-    (click)="pageChange.emit(page() + 1)" [disabled]="page()=== totalPage()">Next</button>
+  <button
+    class="p-2 px-3 bg-white dark:bg-zinc-800 shadow-sm rounded-md text-primary dark:text-zinc-200 border border-transparent dark:border-zinc-700 hover:bg-zinc-50 dark:hover:bg-zinc-700/50 transition-colors disabled:opacity-40 text-sm font-medium"
+    (click)="pageChange.emit(page() + 1)" [disabled]="page() === totalPage()">
+    Next
+  </button>
 </div>
 }

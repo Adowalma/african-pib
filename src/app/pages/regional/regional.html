@@ -1,31 +1,30 @@
-<div class="flex-1 overflow-y-auto custom-scrollbar p-8">
+<div class="flex-1 overflow-y-auto custom-scrollbar p-8 dark:bg-zinc-900 dark:text-zinc-100">
   <div class="w-full mx-auto space-y-gutter">
-    <!-- Dashboard Titles -->
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
       <app-title title="Análise Regional Africana"
         subTitle="Análise comparativa do desempenho económico das regiões africanas entre 2000 e 2023."></app-title>
       <div class="flex gap-2">
         <button
-          class="flex items-center gap-2 bg-white dark:bg-surface-container border border-outline-variant/30 px-4 py-2 rounded-lg text-label-md font-bold hover:bg-surface-container transition-all shadow-sm">
+          class="flex items-center gap-2 bg-white dark:bg-zinc-800 border border-outline-variant/30 dark:border-zinc-700 px-4 py-2 rounded-lg text-label-md font-bold hover:bg-surface-container dark:hover:bg-zinc-700 transition-all shadow-sm">
           <span class="material-symbols-outlined text-[18px] text-primary">calendar_today</span>
           <select
             class="bg-transparent border-none text-sm font-bold text-primary dark:text-primary-fixed focus:ring-0 cursor-pointer p-0 pr-6"
             [value]='selectedYear()' (change)="filteredData()">
             @for (year of years; track $index) {
-            <option [value]="year">{{year}}</option>
+            <option [value]="year" class="dark:bg-zinc-800 dark:text-zinc-100">{{year}}</option>
             }
           </select>
         </button>
       </div>
     </div>
-    <!-- 12-Column Grid -->
     <div class="grid grid-cols-12 gap-gutter">
-      <!-- Map Card (8 Columns) -->
-      <div class="col-span-12 xl:col-span-8 modern-card rounded-xl p-card-padding flex flex-col min-h-125">
+      <div
+        class="col-span-12 xl:col-span-8 modern-card bg-white dark:bg-zinc-800 border border-outline-variant/10 dark:border-zinc-700/50 rounded-xl p-card-padding flex flex-col min-h-125">
         <div class="flex justify-between items-center mb-8">
           <div>
-            <h3 class="text-headline-sm text-on-surface dark:text-white">Seletor de região geográfica</h3>
-            <p class="text-body-md text-on-surface-variant">Clique na região do mapa para isolar os KPIs locais</p>
+            <h3 class="text-headline-sm text-on-surface dark:text-zinc-100">Seletor de região geográfica</h3>
+            <p class="text-body-md text-on-surface-variant dark:text-zinc-400">Clique na região do mapa para isolar os
+              KPIs locais</p>
           </div>
           <button
             class="text-primary dark:text-primary-fixed text-label-md font-black flex items-center gap-1 hover:opacity-70 transition-opacity"
@@ -39,113 +38,127 @@
             <svg class="w-full h-auto drop-shadow-2xl" viewBox="0 0 400 450" xmlns="http://www.w3.org/2000/svg">
               <path class="africa-map-path" d="M100 50 L300 50 L320 120 L280 150 L120 150 L80 120 Z" id="region-north"
                 (click)="regional.set('north')" [class.north]="regional() =='north'"></path>
-              <text class="region-label" text-anchor="middle" x="200" y="90">Norte</text>
+              <text class="region-label fill-current text-on-surface dark:fill-zinc-300" text-anchor="middle" x="200"
+                y="90">Norte</text>
               <path class="africa-map-path" d="M50 140 L120 150 L120 220 L70 240 L30 200 Z" id="region-west"
                 (click)="regional.set('west')" [class.west]="regional() =='west'">
               </path>
-              <text class="region-label" text-anchor="middle" x="75" y="195">Ocindental</text>
+              <text class="region-label fill-current text-on-surface dark:fill-zinc-300" text-anchor="middle" x="75"
+                y="195">Ocindental</text>
               <path class="africa-map-path" d="M120 150 L250 150 L250 280 L180 300 L120 220 Z" id="region-central"
                 (click)="regional.set('central')" [class.central]="regional() =='central'"></path>
-              <text class="region-label" text-anchor="middle" x="185" y="225">Central</text>
+              <text class="region-label fill-current text-on-surface dark:fill-zinc-300" text-anchor="middle" x="185"
+                y="225">Central</text>
               <path class="africa-map-path" d="M250 150 L350 120 L380 200 L320 300 L250 280 Z" id="region-east"
                 (click)="regional.set('east')" [class.east]="regional() =='east'">
               </path>
-              <text class="region-label" text-anchor="middle" x="310" y="215">Oriental</text>
+              <text class="region-label fill-current text-on-surface dark:fill-zinc-300" text-anchor="middle" x="310"
+                y="215">Oriental</text>
               <path class="africa-map-path" d="M150 300 L280 280 L320 300 L250 420 L150 400 Z" id="region-south"
                 (click)="regional.set('south')" [class.south]="regional() =='south'">
               </path>
-              <text class="region-label" text-anchor="middle" x="225" y="350">Austral</text>
+              <text class="region-label fill-current text-on-surface dark:fill-zinc-300" text-anchor="middle" x="225"
+                y="350">Austral</text>
             </svg>
             <div
-              class="absolute hidden pointer-events-none bg-on-surface text-white px-3 py-1.5 rounded text-[11px] font-black shadow-lg transform -translate-x-1/2 -translate-y-full mb-2"
+              class="absolute hidden pointer-events-none bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 px-3 py-1.5 rounded text-[11px] font-black shadow-lg transform -translate-x-1/2 -translate-y-full mb-2"
               id="map-tooltip">
               REGION
             </div>
           </div>
         </div>
       </div>
-      <!-- Dynamic KPI Sidebar (4 Columns) -->
       <div class="col-span-12 xl:col-span-4 flex flex-col gap-gutter">
-        <!-- KPI Card 1 -->
         <div
-          class="bg-primary dark:bg-primary-container modern-card rounded-xl p-card-padding relative overflow-hidden group"
+          class="bg-primary dark:bg-zinc-800 border border-transparent dark:border-zinc-700/50 modern-card rounded-xl p-card-padding relative overflow-hidden group"
           id="kpi-card-1">
           <div class="relative z-10">
-            <h4 class="text-label-md text-white/70 dark:text-primary-fixed/70 uppercase tracking-widest mb-3"
-              id="kpi-label-1">Total {{regional()}} GDP</h4>
-            <div class="text-white text-4xl font-extrabold tracking-tight mb-4" id="kpi-value-1">
+            <h4 class="text-label-md text-white/70 dark:text-zinc-400 uppercase tracking-widest mb-3" id="kpi-label-1">
+              Total {{regional()}} GDP</h4>
+            <div class="text-white dark:text-zinc-100 text-4xl font-extrabold tracking-tight mb-4" id="kpi-value-1">
               {{filteredData()?.pibTotal}}</div>
-            <div class="flex items-center gap-2 bg-white/10 w-fit px-3 py-1.5 rounded-lg border border-white/10">
-              <span class="material-symbols-outlined text-[18px] text-primary-fixed">trending_up</span>
-              <span class="text-label-md font-bold text-white" id="kpi-trend-1">3.4% vs LY</span>
+            <div
+              class="flex items-center gap-2 bg-white/10 dark:bg-zinc-700/50 w-fit px-3 py-1.5 rounded-lg border border-white/10 dark:border-zinc-600/30">
+              <span class="material-symbols-outlined text-[18px] text-white/80 dark:text-zinc-300">trending_up</span>
+              <span class="text-label-md font-bold text-white dark:text-zinc-200" id="kpi-trend-1">3.4% vs LY</span>
             </div>
           </div>
           <div
             class="absolute -right-4 -top-4 w-32 h-32 bg-white/5 rounded-full blur-2xl group-hover:scale-125 transition-transform duration-700">
           </div>
         </div>
-        <!-- KPI Card 2 -->
-        <div class="bg-secondary-container modern-card rounded-xl p-card-padding" id="kpi-card-2">
-          <h4 class="text-label-md text-on-secondary-container/70 uppercase tracking-widest mb-3" id="kpi-label-2">FX
+        <div
+          class="bg-secondary-container dark:bg-zinc-800 border border-transparent dark:border-zinc-700/50 modern-card rounded-xl p-card-padding"
+          id="kpi-card-2">
+          <h4 class="text-label-md text-on-secondary-container/70 dark:text-zinc-400 uppercase tracking-widest mb-3"
+            id="kpi-label-2">FX
             Reserves (Avg)</h4>
-          <div class="text-on-secondary-container text-4xl font-extrabold tracking-tight mb-4" id="kpi-value-2">
+          <div class="text-on-secondary-container dark:text-zinc-100 text-4xl font-extrabold tracking-tight mb-4"
+            id="kpi-value-2">
             $422.5B</div>
-          <div class="flex items-center gap-1.5 text-on-secondary-container/60">
+          <div class="flex items-center gap-1.5 text-on-secondary-container/60 dark:text-zinc-400/70">
             <span class="material-symbols-outlined text-[16px]">history</span>
             <span class="text-[12px] font-medium" id="kpi-meta-2">Updated 24h ago</span>
           </div>
         </div>
-        <!-- KPI Card 3 -->
-        <div class="modern-card rounded-xl p-card-padding" id="kpi-card-3">
+        <div
+          class="bg-white dark:bg-zinc-800 border border-outline-variant/10 dark:border-zinc-700/50 modern-card rounded-xl p-card-padding"
+          id="kpi-card-3">
           <div class="flex items-center gap-4 mb-4">
             <div
-              class="w-10 h-10 rounded-lg bg-primary/5 flex items-center justify-center text-primary border border-primary/10">
+              class="w-10 h-10 rounded-lg bg-primary/5 dark:bg-primary/10 flex items-center justify-center text-primary border border-primary/10 dark:border-primary/20">
               <span class="material-symbols-outlined text-[24px] fill-current">verified</span>
             </div>
             <div class="flex-1 min-w-0">
-              <h4 class="text-label-md font-bold text-on-surface dark:text-white uppercase truncate" id="kpi-label-3">
+              <h4 class="text-label-md font-bold text-on-surface dark:text-zinc-100 uppercase truncate"
+                id="kpi-label-3">
                 Nível de integridade dos dados</h4>
-              <p class="text-[12px] text-on-surface-variant truncate" id="kpi-meta-3">Institucional: 98.4%</p>
+              <p class="text-[12px] text-on-surface-variant dark:text-zinc-400 truncate" id="kpi-meta-3">Institucional:
+                98.4%</p>
             </div>
           </div>
-          <div class="w-full bg-surface-container-high dark:bg-surface-variant/30 rounded-full h-1.5 overflow-hidden">
+          <div class="w-full bg-surface-container-high dark:bg-zinc-700 rounded-full h-1.5 overflow-hidden">
             <div class="bg-primary h-full rounded-full transition-all duration-700" id="kpi-progress-3"
               style="width: 98.4%"></div>
           </div>
         </div>
-        <!-- Mini Chart or Legend -->
-        <div class="modern-card rounded-xl p-4 flex-1">
-          <div class="text-label-md font-bold text-on-surface-variant uppercase tracking-widest mb-4">Índice de
+        <div
+          class="bg-white dark:bg-zinc-800 border border-outline-variant/10 dark:border-zinc-700/50 modern-card rounded-xl p-4 flex-1">
+          <div
+            class="text-label-md font-bold text-on-surface-variant dark:text-zinc-400 uppercase tracking-widest mb-4">
+            Índice de
             Desempenho Regional</div>
           <div class="space-y-3">
             <div class="flex justify-between items-center text-[12px]">
-              <span class="text-on-surface-variant flex items-center gap-2"><span
+              <span class="text-on-surface-variant dark:text-zinc-400 flex items-center gap-2"><span
                   class="w-2 h-2 rounded-full bg-emerald-500"></span> Estável</span>
-              <span class="font-bold">3 Regiões</span>
+              <span class="font-bold text-on-surface dark:text-zinc-200">3 Regiões</span>
             </div>
             <div class="flex justify-between items-center text-[12px]">
-              <span class="text-on-surface-variant flex items-center gap-2"><span
+              <span class="text-on-surface-variant dark:text-zinc-400 flex items-center gap-2"><span
                   class="w-2 h-2 rounded-full bg-amber-500"></span> Caution</span>
-              <span class="font-bold">1 Região</span>
+              <span class="font-bold text-on-surface dark:text-zinc-200">1 Região</span>
             </div>
             <div class="flex justify-between items-center text-[12px]">
-              <span class="text-on-surface-variant flex items-center gap-2"><span
+              <span class="text-on-surface-variant dark:text-zinc-400 flex items-center gap-2"><span
                   class="w-2 h-2 rounded-full bg-blue-500"></span> Emerging</span>
-              <span class="font-bold">1 Região</span>
+              <span class="font-bold text-on-surface dark:text-zinc-200">1 Região</span>
             </div>
           </div>
         </div>
       </div>
-      <!-- Macro Table (12 Columns) -->
-      <div class="col-span-12 modern-card rounded-xl overflow-hidden">
-        <div class="p-card-padding border-b border-outline-variant/30 flex justify-between items-center">
+      <div
+        class="col-span-12 bg-white dark:bg-zinc-800 border border-outline-variant/10 dark:border-zinc-700/50 modern-card rounded-xl overflow-hidden">
+        <div
+          class="p-card-padding border-b border-outline-variant/30 dark:border-zinc-700 flex justify-between items-center">
           <div>
-            <h3 class="text-headline-sm text-on-surface dark:text-white">Matrix Macroenómica Regional PIB 2023</h3>
-            <p class="text-[13px] text-on-surface-variant mt-1">Inflação e relação dívida/PIB comparadas por
+            <h3 class="text-headline-sm text-on-surface dark:text-zinc-100">Matrix Macroenómica Regional PIB 2023</h3>
+            <p class="text-[13px] text-on-surface-variant dark:text-zinc-400 mt-1">Inflação e relação dívida/PIB
+              comparadas por
               agrupamentos regionais.</p>
           </div>
           <button
-            class="bg-surface-container-low dark:bg-surface-container text-primary dark:text-primary-fixed border border-outline-variant/20 px-4 py-2 rounded-lg text-label-md font-bold hover:bg-surface-container-high transition-all flex items-center gap-2">
+            class="bg-surface-container-low dark:bg-zinc-700 text-primary dark:text-primary-fixed border border-outline-variant/20 dark:border-zinc-600 px-4 py-2 rounded-lg text-label-md font-bold hover:bg-surface-container-high dark:hover:bg-zinc-600 transition-all flex items-center gap-2">
             <span class="material-symbols-outlined text-[18px]">download</span>
             <span>CSV</span>
           </button>
@@ -153,42 +166,43 @@
         <div class="overflow-x-auto custom-scrollbar">
           <table class="w-full text-left">
             <thead>
-              <tr class="bg-surface-container-lowest dark:bg-inverse-surface border-b border-outline-variant/10">
+              <tr
+                class="bg-surface-container-lowest dark:bg-zinc-900/50 border-b border-outline-variant/10 dark:border-zinc-700">
                 <th
-                  class="px-card-padding py-4 text-[11px] text-on-surface-variant/70 uppercase tracking-widest font-black">
+                  class="px-card-padding py-4 text-[11px] text-on-surface-variant/70 dark:text-zinc-400 uppercase tracking-widest font-black">
                   Ranking</th>
                 <th
-                  class="px-card-padding py-4 text-[11px] text-on-surface-variant/70 uppercase tracking-widest font-black">
+                  class="px-card-padding py-4 text-[11px] text-on-surface-variant/70 dark:text-zinc-400 uppercase tracking-widest font-black">
                   REgião</th>
                 <th
-                  class="px-card-padding py-4 text-[11px] text-on-surface-variant/70 uppercase tracking-widest font-black text-right">
+                  class="px-card-padding py-4 text-[11px] text-on-surface-variant/70 dark:text-zinc-400 uppercase tracking-widest font-black text-right">
                   Inflação Média (%)</th>
                 <th
-                  class="px-card-padding py-4 text-[11px] text-on-surface-variant/70 uppercase tracking-widest font-black text-right">
+                  class="px-card-padding py-4 text-[11px] text-on-surface-variant/70 dark:text-zinc-400 uppercase tracking-widest font-black text-right">
                   Crescimento acumulado (%)</th>
                 <th
-                  class="px-card-padding py-4 text-[11px] text-on-surface-variant/70 uppercase tracking-widest font-black text-center">
+                  class="px-card-padding py-4 text-[11px] text-on-surface-variant/70 dark:text-zinc-400 uppercase tracking-widest font-black text-center">
                   Status</th>
                 <th
-                  class="px-card-padding py-4 text-[11px] text-on-surface-variant/70 uppercase tracking-widest font-black">
+                  class="px-card-padding py-4 text-[11px] text-on-surface-variant/70 dark:text-zinc-400 uppercase tracking-widest font-black">
                   População Total</th>
               </tr>
             </thead>
-            <tbody class="divide-y divide-outline-variant/5">
+            <tbody class="divide-y divide-outline-variant/5 dark:divide-zinc-700/50">
               @for (item of regionalList; track $index) {
-              <tr
-                class="hover:bg-surface-container-low dark:hover:bg-surface-container/50 cursor-pointer transition-colors"
+              <tr class="hover:bg-surface-container-low dark:hover:bg-zinc-700/50 cursor-pointer transition-colors"
                 (click)="regional.set('north')">
 
-                <td class="px-card-padding py-4 font-bold text-on-surface dark:text-white tabular-nums">
+                <td class="px-card-padding py-4 font-bold text-on-surface dark:text-zinc-100 tabular-nums">
                   {{item.Ranking_PIB_2023}}</td>
 
                 <td class="px-card-padding py-4">
                   <div class="flex items-center gap-3">
                     <div [class]="'w-2 h-8 rounded-full region-gradient-north'"></div>
                     <div>
-                      <div class="font-bold text-on-surface dark:text-white">{{item.Regiao}}</div>
-                      <div class="text-[10px] text-on-surface-variant/60 font-black uppercase tracking-tighter">
+                      <div class="font-bold text-on-surface dark:text-zinc-100">{{item.Regiao}}</div>
+                      <div
+                        class="text-[10px] text-on-surface-variant/60 dark:text-zinc-400/80 font-black uppercase tracking-tighter">
                         {{item.No_Paises}}
                         Países</div>
                     </div>
@@ -196,15 +210,16 @@
                 </td>
 
 
-                <td class="px-card-padding py-4 text-right font-bold text-on-surface dark:text-white tabular-nums">
+                <td class="px-card-padding py-4 text-right font-bold text-on-surface dark:text-zinc-100 tabular-nums">
                   {{item.Inflacao_Media}}%</td>
-                <td class="px-card-padding py-4 text-right font-bold text-on-surface dark:text-white tabular-nums">
+                <td class="px-card-padding py-4 text-right font-bold text-on-surface dark:text-zinc-100 tabular-nums">
                   {{item.Crescimento_Acumulado_Regiao_pc}}%</td>
                 <td class="px-card-padding py-4 text-center">
                   <span
                     class="inline-flex items-center px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 text-[10px] font-black uppercase tracking-widest">Caution</span>
                 </td>
-                <td class="px-card-padding py-4 text-on-surface-variant text-[13px]">{{item.Pop_Total_Milhoes}} Milhões
+                <td class="px-card-padding py-4 text-on-surface-variant dark:text-zinc-400 text-[13px]">
+                  {{item.Pop_Total_Milhoes}} Milhões
                 </td>
               </tr>
               }
