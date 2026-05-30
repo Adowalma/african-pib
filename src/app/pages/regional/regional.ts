@@ -9,28 +9,28 @@ import { Title } from '../../shared/components/title/title';
   styleUrl: './regional.css',
 })
 export class Regional {
-  regional = signal<string>('Continental');
-
-  reginonalData = signal(Regioes);
-
   regionalList = Regioes;
 
-  years = ['2000', '2006', '2010', '2014', '2019', '2022', '2023'];
+  years = ['2000', '2006', '2010', '2019', '2022', '2023'];
 
+  regional = signal<string>('');
   selectedYear = signal<string>('2000');
 
   filteredData = computed(() => {
-    const regionalList = this.reginonalData();
-    const regionalName = this.regional();
-    const year = this.selectedYear();
+    const nomeRegiao = this.regional();
+    const ano = this.selectedYear();
 
-    const foundedRegional = regionalList.find((item) => item.Regiao === regionalName);
-    if (!foundedRegional) return null;
+    const linhaRegiao = this.regionalList.find(
+      (item) => item.Regiao.toLowerCase() === nomeRegiao.toLowerCase(),
+    );
+    if (!linhaRegiao) return null;
 
-    const regionalDataSelected = foundedRegional as any;
+    const chavePib = `PIB_Total_${ano}_Bi` as keyof typeof linhaRegiao;
 
+    // Retorna os dados mapeados de forma direta
     return {
-      pibTotal: regionalDataSelected[`PIB_Total_${year}_Bi`],
+      pibTotal: linhaRegiao[chavePib] || 0,
+      pibPc: linhaRegiao.PIBpc_Medio_2023,
     };
   });
 
