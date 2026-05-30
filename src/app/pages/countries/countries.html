@@ -100,44 +100,55 @@
           </button>
         </div>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 transition-colors duration-300">
         @for (item of paginatedData(); track $index) {
         <div
-          class="bg-white dark:bg-zinc-800 rounded-xl border border-outline-variant/20 dark:border-zinc-700/50 p-5 kpi-card group">
+          class="bg-white dark:bg-zinc-900 rounded-xl border border-outline-variant/20 dark:border-zinc-800 p-5 kpi-card group hover:shadow-md dark:hover:border-zinc-700 transition-all">
+
           <div class="flex justify-between mb-4">
             <div class="flex items-center gap-3">
-
-              <img [alt]="'Bandeira de '+ item.country" class="w-8 h-5 rounded-sm object-cover"
+              <img [alt]="'Bandeira de '+ item.country"
+                class="w-8 h-5 rounded-sm object-cover border border-zinc-200/50 dark:border-zinc-800"
                 [src]="'https://flagcdn.com/'+ item.code.toLowerCase().substring(0,2) +'.svg'" />
               <span class="font-bold text-on-surface dark:text-zinc-100">{{item.country}}</span>
             </div>
             <button
-              class="p-2 rounded-full hover:bg-primary/10 dark:hover:bg-primary-fixed/10 text-primary dark:text-primary-fixed transition-colors">
-              <span class="material-symbols-outlined text-xl">info</span>
+              class="p-2 rounded-full hover:bg-primary/10 dark:hover:bg-zinc-800 text-primary dark:text-zinc-300 transition-colors">
+              <span class="material-symbols-outlined text-xl block">info</span>
             </button>
           </div>
+
           <div class="grid grid-cols-2 gap-4 mb-4">
             <div>
-              <span class="text-[11px] text-on-surface-variant dark:text-zinc-400 uppercase block mb-1">PIB
-                Nominal</span>
-              <span class="font-bold text-sm text-on-surface dark:text-zinc-200">${{item.pib}}B</span>
+              <span
+                class="text-[11px] text-on-surface-variant dark:text-zinc-400 uppercase font-semibold tracking-wider block mb-1">
+                PIB Nominal
+              </span>
+              <span class="font-bold text-base text-on-surface dark:text-zinc-200">${{item.pib}}B</span>
             </div>
             <div>
               <span
-                class="text-[11px] text-on-surface-variant dark:text-zinc-400 uppercase block mb-1">Crescimento</span>
-              <span class="font-bold text-sm text-primary">{{item.pibGrow}}%</span>
+                class="text-[11px] text-on-surface-variant dark:text-zinc-400 uppercase font-semibold tracking-wider block mb-1">
+                Crescimento
+              </span>
+              <span class="font-bold text-base text-primary dark:text-emerald-400">{{item.pibGrow}}%</span>
             </div>
           </div>
-          <div class="h-10 flex items-end gap-1 px-1">
-            <div class="flex-1 bg-primary/10 h-[40%] rounded-sm"></div>
-            <div class="flex-1 bg-primary/20 h-[60%] rounded-sm"></div>
-            <div class="flex-1 bg-primary/40 h-[75%] rounded-sm"></div>
-            <div class="flex-1 bg-primary/30 h-[55%] rounded-sm"></div>
-            <div class="flex-1 bg-primary h-[90%] rounded-sm"></div>
+
+          <div class="h-10 flex items-end gap-1 px-1 opacity-80 group-hover:opacity-100 transition-opacity">
+            <div class="flex-1 bg-primary/10 dark:bg-zinc-800 h-[40%] rounded-sm"></div>
+            <div class="flex-1 bg-primary/20 dark:bg-zinc-700 h-[60%] rounded-sm"></div>
+            <div class="flex-1 bg-primary/40 dark:bg-primary/30 h-[75%] rounded-sm"></div>
+            <div class="flex-1 bg-primary/30 dark:bg-zinc-600 h-[55%] rounded-sm"></div>
+            <div class="flex-1 bg-primary dark:bg-primary-fixed h-[90%] rounded-sm"></div>
           </div>
+
         </div>
         }
-        <app-pagination [page]="page()" [totalPage]="totalPages()" (pageChange)="page.set($event)"></app-pagination>
+
+        <div class="col-span-12 md:col-span-2">
+          <app-pagination [page]="page()" [totalPage]="totalPages()" (pageChange)="page.set($event)"></app-pagination>
+        </div>
       </div>
       <div class="bg-white dark:bg-zinc-800 rounded-xl border border-outline-variant/20 dark:border-zinc-700/50 p-6">
         <div class="flex justify-between items-center mb-10">
